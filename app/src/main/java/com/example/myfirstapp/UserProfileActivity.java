@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class UserProfileActivity extends AppCompatActivity {
 
@@ -23,8 +24,9 @@ public class UserProfileActivity extends AppCompatActivity {
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent logout = new Intent(UserProfileActivity.this,MainActivity.class);
+                Intent logout = new Intent(UserProfileActivity.this,LoginActivity.class);
                 startActivity(logout);
+                Toast.makeText(UserProfileActivity.this,"Logout success",Toast.LENGTH_SHORT).show();
             }
         });
     }

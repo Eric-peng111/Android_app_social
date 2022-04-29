@@ -4,56 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F9F7F7"
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/studentIDEditText"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_account"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginRight="90dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:background="#DBE2EF"
         android:ems="10"
-        android:gravity="center_horizontal"
+        android:gravity="center|center_horizontal"
         android:hint="STUDENT ID"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="#112D4E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/userIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="wrap_content"
+        android:id="@+id/et_password"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginRight="90dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:background="#DBE2EF"
         android:ems="10"
-        android:gravity="center_horizontal"
+        android:gravity="center|center_horizontal"
         android:hint="PASSWORD"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:password="true"
+        android:textColor="#112D4E"
         android:textIsSelectable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/passwordIcon"
-        app:layout_constraintTop_toBottomOf="@+id/studentIDEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/et_account" />
 
     <ImageView
         android:id="@+id/passwordIcon"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginLeft="90dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        app:layout_constraintEnd_toStartOf="@+id/passwordEditText"
+        app:layout_constraintEnd_toStartOf="@+id/et_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userIcon"
         app:srcCompat="@drawable/login_password_icon" />
@@ -62,25 +67,41 @@
         android:id="@+id/userIcon"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="235dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="420dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        app:layout_constraintEnd_toStartOf="@+id/studentIDEditText"
+        app:layout_constraintEnd_toStartOf="@+id/et_account"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/login_user_icon" />
 
     <Button
-        android:id="@+id/loginButton"
-        style="@android:style/Widget.DeviceDefault.Button.Colored"
-        android:layout_width="177dp"
-        android:layout_height="48dp"
+        android:id="@+id/btn_login"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:text="LOGIN"
+        android:textColor="@color/lightBlue"
+
+        android:theme="@style/LoginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="394dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="75dp"
+        android:scaleX="2.0"
+        android:scaleY="2.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login" />
+
 
 </android.support.constraint.ConstraintLayout>

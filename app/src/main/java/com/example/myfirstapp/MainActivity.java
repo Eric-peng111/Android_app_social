@@ -7,16 +7,19 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private Button btn_login_test;
+    private Button btn_profile_test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button testButton = (Button) findViewById(R.id.testButton);
+        btn_login_test =findViewById(R.id.btn_login_test);
+        btn_profile_test = findViewById(R.id.btn_profile_test);
 
         //Set a test button to login page
-        testButton.setOnClickListener(new View.OnClickListener() {
+        btn_login_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent loginActivity= new Intent(MainActivity.this,LoginActivity.class);
@@ -24,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //Set a test button to profile
+        btn_profile_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loginActivity= new Intent(MainActivity.this, UserProfileActivity.class);
+                startActivity(loginActivity);
+            }
+        });
 
     }
 }

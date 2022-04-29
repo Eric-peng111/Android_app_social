@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
     private Button btn_login_test;
-    private Button btn_profile_test;
+    private ImageButton btn_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn_login_test =findViewById(R.id.btn_login_test);
-        btn_profile_test = findViewById(R.id.btn_profile_test);
+        btn_profile= findViewById(R.id.btn_profile);
 
         //Set a test button to login page
         btn_login_test.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Set a test button to profile
-        btn_profile_test.setOnClickListener(new View.OnClickListener() {
+        btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent loginActivity= new Intent(MainActivity.this, UserProfileActivity.class);

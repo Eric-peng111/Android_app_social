@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button btnLogin;
+    private Button btnLogin,btn_goSignUp;
     private EditText etAccount,etPassword;
 
     //user name and password for test
@@ -18,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     //ONLY REMOVE WHEN "loginCheck" HAS BEEN DONE
     private String userName = "123456";
     private String pass = "123";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         etAccount = findViewById(R.id.et_account);
         etPassword = findViewById(R.id.et_password);
+        btn_goSignUp = findViewById(R.id.btn_signUp);
 
         //set onclick event on LOGIN button
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +45,22 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+        btn_goSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this,"Sign UP",Toast.LENGTH_SHORT).show();
+                Intent registerActivity= new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(registerActivity);
+            }
+        });
+
+
     }
+
+
+
+
 
     //simple login check method
     //TODO Modify this method to read user names and information from existing data structures

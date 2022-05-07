@@ -19,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
     private String userName = "123456";
     private String pass = "123";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
         btn_goSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,12 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(registerActivity);
             }
         });
-
-
     }
-
-
-
 
 
     //simple login check method
@@ -86,5 +79,4 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this,"Wrong username",Toast.LENGTH_SHORT).show();
         }
     }
-
 }

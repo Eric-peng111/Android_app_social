@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 Map<String,Object> map = mList.get(i);
                 String title = (String) map.get("title");
                 Toast.makeText(MainActivity.this,"You pressed " + title,Toast.LENGTH_SHORT).show();
+                Intent contentActivity= new Intent(MainActivity.this, ContentActivity.class);
+                startActivity(contentActivity);
 
             }
         });

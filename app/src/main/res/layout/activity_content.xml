@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    tools:context=".ContentActivity">
+
+    <ImageButton
+        android:id="@+id/btn_comment"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="347dp"
+        android:layout_marginLeft="347dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/app_name"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:scaleX="1.0"
+        android:scaleY="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/comment" />
+
+    <ImageButton
+        android:id="@+id/btn_like"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/app_name"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:scaleX="1.0"
+        android:scaleY="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_content"
+        app:srcCompat="@drawable/like" />
+
+    <ImageButton
+        android:id="@+id/btn_dislike"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/app_name"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:scaleX="0.8"
+        android:scaleY="0.7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_like"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_content"
+        app:srcCompat="@drawable/dislike" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="9dp"
+        android:text="Post time 06/05/2022"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_content" />
+
+    <TextView
+        android:id="@+id/tv_title_content"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:autoText="false"
+        android:text="This is an example title This is an example title "
+        android:textSize="24sp"
+        app:autoSizeMaxTextSize="34sp"
+        app:autoSizeMinTextSize="16sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="111dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="9dp"
+        android:autoText="false"
+        android:text="Poster Name"
+        app:autoSizeMaxTextSize="14sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_content" />
+
+    <TextView
+        android:id="@+id/tv_content_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="200dp"
+        android:scrollbars="vertical"
+        android:text="What should my Wiki page contain? As topics may vary a lot, there is no specific script to how a wiki page should be. However, if you are creating a page about a concept (e.g., Red-Black or AVL Trees), it may contain the definition of the topic, relevant algorithms, some practical examples, etc. Do not forget that if you reuse other people's code, you must cite it properly.
+Note that the idea is not to duplicate a Wikipedia page here (or any other existing page on the Web). You can take inspiration from Wikipedia and elsewhere, but you should not copy their content here. Of course, you can always create links to other sources (a bookmark page might be a good resource).
+
+Each Wiki page should address one and only one topic. If it is about Debugging using Eclipse, the page will only cover Eclipse (not IntelliJ). If it is about Binary Search Tree, then you only cover Binary Search Trees. You can add links to other relevant pages (if any). Although you do not need to create a long wiki page, it may be interesting to have pages addressing a specific thing (for example, how to insert an item in a Red-Black tree, how to perform rotations in a Red-Black tree, how to check for branch completeness (you could show theoretically, using Eclipse or using IntelliJ), ...).
+
+Again, do not forget to add a list of references to the page you create (if any).
+
+Think outside the box: It does not need to be a concept or even text or code; it could be an animation explaining how to develop JUnit test cases, for example. If you learned something related to Android, for example, how to change the theme or style of an Android app, you could also add it here. What is important? That you make it simple, accurate and cover a relevant thing to the course!
+
+I want to create something, but I do not know what topic is relevant! Go to our forum, check your classmates' questions, answer them, and bring the answer back here (in more details). Next time someone asks something related to it, point them to your Wiki article!
+
+Can I add images, videos ...? Sure! You can add any content as long as you cite it properly and are related/relevant to the course.
+
+How do I create a page? First, you need to link one page to another. Then, to create a page, you must edit this page and type the title of the page you want to create between double square brackets. The link will become active after you save this page. Next, click on the link you created and start editing the page you just created.
+
+How will you be assessed? You will not be assessed here! This is a collaborative space, and the content will be curated by students only. This is not an official platform for the delivery of learning materials. However, we acknowledge the fact that many of us can contribute to each other learning. Of course, if it comes to our attention that a concept is not accurate, we may remove the page or add a statement that the content is not accurate and requires revision.
+
+Can I contribute to an existing page? Sure! It is a collaborative space!
+
+What do I get in exchange? Ha! First of all, this should be a place where we share our knowledge and contribute to each others learning (some altruism here!). Second, you will get visibility. I am sure your colleagues will recognize your efforts! Third, you will contribute to the course; this is absolutely great! And, fourth, you can win a special wiki token. There will be two rounds of evaluations on this Wiki: during teaching break and before the Final Exam. Students will vote for the top three pages (each main author will get a special wiki token). If the number of votes is low, votes provided by students will not be considered. If there are fewer than three articles, we may only pick one. However, it needs to meet quality, accuracy and relevancy criteria. An author cannot receive more than one token if two or more pages created by him/her is selected as the most relevant. Note that the process must be fair (check misconduct and academic integrity policies). The creation of this wiki aims to share and disseminate knowledge!
+
+* Based on the votes (top articles), some tutors and I will go through and discuss the most relevant, accurate, and timely topics. What will be evaluated? Your participation on the Forum and the relevancy and accuracy of the created page. Note that we may limit the number of tokens distributed depending on the number of participants. This step ensures that the selected articles (the most voted by students) meet quality, accuracy and relevancy criteria. Again, students will decide the best articles! We will only double-check! "
+        android:verticalScrollbarPosition="defaultPosition"
+        app:autoSizeMaxTextSize="22sp"
+        app:autoSizeMinTextSize="16sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/et_comment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/btn_comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content_content" />
+</android.support.constraint.ConstraintLayout>

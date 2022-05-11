@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btn_profile;
     private ImageButton btn_search;
     private ImageButton btn_nearby;
+    private ImageButton btn_myPost;
     private FloatingActionButton fab_newPost;
 
     private ListView lv_content;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btn_nearby = findViewById(R.id.btn_nearby);
         btn_search = findViewById(R.id.btn_search);
         fab_newPost = findViewById(R.id.fab_newPost);
+        btn_myPost = findViewById(R.id.btn_myPost);
 
         //list view
         lv_content = findViewById(R.id.lv_content);
@@ -118,7 +120,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Set a button to my post
+        btn_myPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myPostActivity= new Intent(MainActivity.this, MyPostActivity.class);
+                startActivity(myPostActivity);
+            }
+        });
 
+        //Set a button to post new page
         fab_newPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

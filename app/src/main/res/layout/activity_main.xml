@@ -8,6 +8,22 @@
     tools:context=".MainActivity">
 
     <ImageButton
+        android:id="@+id/btn_myPost"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/app_name"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@+id/btn_nearby"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mypost" />
+
+    <ImageButton
         android:id="@+id/btn_nearby"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="40dp"
@@ -103,7 +119,13 @@
         android:id="@+id/lv_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/lightBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

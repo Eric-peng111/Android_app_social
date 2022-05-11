@@ -1,6 +1,7 @@
 package com.example.myfirstapp;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btn_profile;
     private ImageButton btn_search;
     private ImageButton btn_nearby;
+    private FloatingActionButton fab_newPost;
 
     private ListView lv_content;
 //    private List<String> content;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         btn_profile= findViewById(R.id.btn_profile);
         btn_nearby = findViewById(R.id.btn_nearby);
         btn_search = findViewById(R.id.btn_search);
+        fab_newPost = findViewById(R.id.fab_newPost);
 
         //list view
         lv_content = findViewById(R.id.lv_content);
@@ -110,8 +113,17 @@ public class MainActivity extends AppCompatActivity {
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent loginActivity= new Intent(MainActivity.this, UserProfileActivity.class);
-                startActivity(loginActivity);
+                Intent profileActivity= new Intent(MainActivity.this, UserProfileActivity.class);
+                startActivity(profileActivity);
+            }
+        });
+
+
+        fab_newPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent postActivity= new Intent(MainActivity.this, PostActivity.class);
+                startActivity(postActivity);
             }
         });
 

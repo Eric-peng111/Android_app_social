@@ -1,26 +1,38 @@
 package com.example.myfirstapp;
 
 import android.content.Intent;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myfirstapp.userCollection.User;
+
+//import com.google.firebase.FirebaseApp;
 
 public class LoginActivity extends AppCompatActivity {
     private Button btnLogin,btn_goSignUp;
     private EditText etAccount,etPassword;
 
-    //user name and password for test
-    //THIS IS ONLY FOR TEST
-    //ONLY REMOVE WHEN "loginCheck" HAS BEEN DONE
-    private String userName = "123456";
-    private String pass = "123";
+
+    MyApplication app= MyApplication.getApplication();
+
+//    //user name and password for test
+//    //THIS IS ONLY FOR TEST
+//    //ONLY REMOVE WHEN "loginCheck" HAS BEEN DONE
+//    private String userName = "123456";
+//    private String pass = "123";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        FirebaseApp.initializeApp(getBaseContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         //set title to "LOGIN"
@@ -44,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
         btn_goSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,31 +65,44 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(registerActivity);
             }
         });
+
+
     }
 
+
+    private boolean check(String userName,String password){
+        if(app.getUser().find(new User(userName,password))==null)
+            return false;
+
+        return true;
+    }
 
     //simple login check method
     //TODO Modify this method to read user names and information from existing data structures
     private void loginCheck(String account,String password){
-        //user name match
-        if (TextUtils.equals(account,userName)){
-            //password match
-            if (TextUtils.equals(password,pass))
-                {
-                    System.out.println("success");
-                    Toast.makeText(LoginActivity.this,"Login success",Toast.LENGTH_SHORT).show();
-                    Intent mainActivity= new Intent(this, MainActivity.class);
-                    startActivity(mainActivity);
-                }
-            else{
-                System.out.println("failed");
-                Toast.makeText(LoginActivity.this,"Wrong password!",Toast.LENGTH_SHORT).show();
-            }
-        }
-        else
+
+        if (check(account,password))
         {
-            System.out.println("failed");
-            Toast.makeText(LoginActivity.this,"Wrong username",Toast.LENGTH_SHORT).show();
+            System.out.println("success");
+            Toast.makeText(LoginActivity.this,"Login success",Toast.LENGTH_SHORT).show();
+            Intent mainActivity= new Intent(this, MainActivity.class);
+            User user=app.getUser().find(new User(account,password)).value;
+
+            user.US.login(account,password);
+
+            mainActivity.putExtra("USER",user);
+            startActivity(mainActivity);
         }
+        else{
+            app.getUser().traverse1();
+            System.out.println("failed");
+            Toast.makeText(LoginActivity.this,"Wrong password!",Toast.LENGTH_SHORT).show();
+        }
+
     }
+
+    public void printUser(){
+        app.getUser();
+    }
+
 }

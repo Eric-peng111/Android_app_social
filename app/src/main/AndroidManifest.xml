@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myfirstapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MyPostActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PostActivity"
-            android:exported="false" />
         <activity
             android:name=".ContentActivity"
             android:exported="false" />
@@ -31,9 +27,17 @@
             android:name=".UserProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MyPostActivity"
+            android:exported="true" />
+
+
+        <activity android:name=".LoginActivity"  android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

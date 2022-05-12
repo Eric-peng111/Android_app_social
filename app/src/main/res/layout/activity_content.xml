@@ -8,15 +8,13 @@
     tools:context=".ContentActivity">
 
     <ImageButton
-        android:id="@+id/btn_comment"
+        android:id="@+id/btn_comment2"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginStart="347dp"
-        android:layout_marginLeft="347dp"
+        android:layout_marginStart="300dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="4dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/app_name"
         android:cropToPadding="false"
@@ -25,8 +23,29 @@
         android:scaleY="1.0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/comment" />
+
+    <ImageButton
+        android:id="@+id/btn_home"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="350dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/app_name"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:scaleX="1.0"
+        android:scaleY="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home" />
 
     <ImageButton
         android:id="@+id/btn_like"
@@ -174,7 +193,7 @@ What do I get in exchange? Ha! First of all, this should be a place where we sha
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/btn_comment"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_content_content" />

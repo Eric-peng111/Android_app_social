@@ -12,10 +12,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
         android:background="#DBE2EF"
         android:ems="10"
         android:gravity="center|center_horizontal"
@@ -25,7 +23,7 @@
         android:textColor="#112D4E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/userIcon"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
         android:id="@+id/et_password"
@@ -68,13 +66,11 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         app:layout_constraintEnd_toStartOf="@+id/et_account"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/login_user_icon" />
 
     <Button
@@ -98,9 +94,11 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="200dp"
         android:text="SIGN UP"
         android:textColor="@color/lightBlue"
         android:theme="@style/LoginButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"

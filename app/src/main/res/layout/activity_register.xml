@@ -7,53 +7,70 @@
     android:background="#F9F7F7"
     tools:context=".RegisterActivity">
 
-    <ImageView
-        android:id="@+id/passwordIcon5"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        app:layout_constraintEnd_toStartOf="@+id/et_regPassword"
-        app:layout_constraintHorizontal_bias="0.761"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userIcon"
-        app:srcCompat="@drawable/login_password_icon" />
-
     <EditText
-        android:id="@+id/et_regRepeatPassword"
+        android:id="@+id/et_regPassword3"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginEnd="50dp"
         android:background="#DBE2EF"
         android:ems="10"
         android:gravity="center|center_horizontal"
-        android:hint="REPEAT PASSWORD"
+        android:hint="PHONE NUMBER"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:password="true"
         android:textColor="#112D4E"
         android:textIsSelectable="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/passwordIcon"
-        app:layout_constraintTop_toBottomOf="@+id/et_regPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <ImageView
+        android:id="@+id/phoneIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/et_regPassword3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emalIcon"
+        app:srcCompat="@drawable/phone" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:background="#DBE2EF"
+        android:ems="10"
+        android:gravity="center|center_horizontal"
+        android:hint="E-MAIL"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:password="true"
+        android:textColor="#112D4E"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_regAccount" />
+
+    <ImageView
+        android:id="@+id/emalIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/et_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userIcon"
+        app:srcCompat="@drawable/email" />
 
     <EditText
         android:id="@+id/et_regAccount"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="50dp"
         android:background="#DBE2EF"
         android:ems="10"
         android:gravity="center|center_horizontal"
@@ -62,18 +79,25 @@
         android:minHeight="48dp"
         android:textColor="#112D4E"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/userIcon"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="320dp"
+        app:layout_constraintEnd_toStartOf="@+id/et_regAccount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login_user_icon" />
 
     <EditText
         android:id="@+id/et_regPassword"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginEnd="50dp"
         android:background="#DBE2EF"
         android:ems="10"
         android:gravity="center|center_horizontal"
@@ -84,36 +108,47 @@
         android:textColor="#112D4E"
         android:textIsSelectable="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/passwordIcon"
-        app:layout_constraintTop_toBottomOf="@+id/et_regAccount" />
+        app:layout_constraintTop_toBottomOf="@+id/et_regPassword3" />
+
+    <ImageView
+        android:id="@+id/passwordIcon5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintEnd_toStartOf="@+id/et_regRepeatPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordIcon"
+        app:srcCompat="@drawable/login_password_icon" />
+
+    <EditText
+        android:id="@+id/et_regRepeatPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="50dp"
+        android:background="#DBE2EF"
+        android:ems="10"
+        android:gravity="center|center_horizontal"
+        android:hint="REPEAT PASSWORD"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:password="true"
+        android:textColor="#112D4E"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_regPassword" />
 
     <ImageView
         android:id="@+id/passwordIcon"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         app:layout_constraintEnd_toStartOf="@+id/et_regPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userIcon"
+        app:layout_constraintTop_toBottomOf="@+id/phoneIcon"
         app:srcCompat="@drawable/login_password_icon" />
-
-    <ImageView
-        android:id="@+id/userIcon"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="416dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        app:layout_constraintEnd_toStartOf="@+id/et_regAccount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_user_icon" />
 
     <Button
         android:id="@+id/btn_signUp"
@@ -122,21 +157,26 @@
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
 
+        android:layout_marginBottom="50dp"
         android:text="SIGN UP"
         android:textColor="@color/lightBlue"
         android:theme="@style/LoginButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_regRepeatPassword" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="394dp"
+        android:layout_width="0dp"
         android:layout_height="245dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
         android:scaleX="2.0"
         android:scaleY="2.0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/login" />

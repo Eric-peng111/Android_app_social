@@ -10,57 +10,28 @@
     tools:layout_editor_absoluteY="0dp">
 
     <TextView
-        android:id="@+id/tv_bio"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:background="#DBE2EF"
-        android:padding="10dp"
-        android:scrollbars="vertical"
-        android:text="  I am currently studying for a master's degree in computer science at ANU. My hobbies are music and photography."
-        android:textColor="#112D4E"
-        android:textSize="24sp"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
-
-    <TextView
-        android:id="@+id/tv_nickName"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:background="#DBE2EF"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="SimonMeng0712"
-        android:textColor="#112D4E"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_studentNum" />
-
-    <TextView
         android:id="@+id/tv_gender"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:background="#DBE2EF"
         android:gravity="center_horizontal|center_vertical"
         android:text="male"
         android:textColor="#112D4E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nickName" />
+        app:layout_constraintStart_toEndOf="@+id/tv_i_gender"
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
 
     <TextView
         android:id="@+id/tv_i_gender"
         android:layout_width="90dp"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
         android:background="#3F72AF"
         android:gravity="center_horizontal|center_vertical"
         android:text="Gender"
@@ -68,12 +39,15 @@
         android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tv_gender"
-        app:layout_constraintTop_toBottomOf="@+id/tv_i_nickName" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
 
     <TextView
         android:id="@+id/tv_i_DOB"
         android:layout_width="90dp"
         android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="15dp"
         android:background="#3F72AF"
         android:gravity="center_horizontal|center_vertical"
@@ -82,12 +56,15 @@
         android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tv_DOB"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_i_gender" />
 
     <TextView
         android:id="@+id/tv_i_location"
         android:layout_width="90dp"
         android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:background="#3F72AF"
         android:gravity="center_horizontal|center_vertical"
@@ -96,50 +73,39 @@
         android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tv_location"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_i_DOB" />
 
     <TextView
-        android:id="@+id/tv_i_nickName"
-        android:layout_width="90dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:background="#3F72AF"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Nickname"
-        android:textColor="#F9F7F7"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tv_nickName"
-        app:layout_constraintTop_toBottomOf="@+id/tv_studentNum" />
-
-    <TextView
         android:id="@+id/tv_DOB"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:background="#DBE2EF"
         android:gravity="center_horizontal|center_vertical"
         android:text="1997-07-12"
         android:textColor="#112D4E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_i_DOB"
         app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
 
     <TextView
         android:id="@+id/tv_location"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
         android:background="#DBE2EF"
         android:gravity="center_horizontal|center_vertical"
         android:text="China"
         android:textColor="#112D4E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_i_location"
         app:layout_constraintTop_toBottomOf="@+id/tv_DOB" />
 
     <ImageView
@@ -148,17 +114,17 @@
         android:layout_height="102dp"
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_i_MYPROFILE"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user_profile_image" />
 
     <TextView
         android:id="@+id/tv_i_studentNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="STUDENT NO."
         android:textColor="@color/dark"
         android:textSize="20sp"
@@ -169,15 +135,15 @@
         android:id="@+id/tv_userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="16dp"
         android:text="Zihan Meng"
         android:textColor="@color/dark"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/iv_avatar"
-        app:layout_constraintTop_toBottomOf="@+id/tv_i_MYPROFILE" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_studentNum"
@@ -190,40 +156,17 @@
         app:layout_constraintStart_toStartOf="@+id/tv_i_studentNo"
         app:layout_constraintTop_toBottomOf="@+id/tv_i_studentNo" />
 
-    <TextView
-        android:id="@+id/tv_i_MYPROFILE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="27dp"
-        android:text="MY PROFILE"
-        android:textColor="@color/dark"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_i_bio"
-        android:layout_width="90dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="15dp"
-        android:background="#3F72AF"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Bio"
-        android:textColor="#F9F7F7"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tv_bio"
-        app:layout_constraintTop_toBottomOf="@+id/tv_i_location" />
-
     <Button
         android:id="@+id/btn_logout"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
 
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="100dp"
         android:text="LOG OUT"
         android:textColor="@color/lightBlue"
         android:textSize="24sp"
@@ -231,8 +174,30 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bio"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_location"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/app_name"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:scaleX="1.1"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_location"
+        app:layout_constraintTop_toTopOf="@+id/tv_location"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/nearby" />
+
 
 </android.support.constraint.ConstraintLayout>

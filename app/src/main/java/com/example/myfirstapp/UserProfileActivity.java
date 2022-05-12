@@ -16,8 +16,8 @@ public class UserProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        //set title to "User Profile"
-        getSupportActionBar().setTitle("User Profile");
+        //set title to "My Profile"
+        getSupportActionBar().setTitle("My Profile");
 
 
         btn_logout = findViewById(R.id.btn_logout);

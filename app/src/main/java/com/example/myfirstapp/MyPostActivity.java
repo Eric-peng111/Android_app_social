@@ -1,6 +1,7 @@
 package com.example.myfirstapp;
 
 import android.annotation.SuppressLint;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import android.content.Intent;
+//import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MyPostActivity extends AppCompatActivity {
@@ -33,7 +42,7 @@ public class MyPostActivity extends AppCompatActivity {
         for (int i = 0; i < 50; i++) {
             Map<String,Object> map = new HashMap();
             map.put("title","This is post title " + i);
-            map.put("content","This is post content " + i + ". The objective of this project is to gain some experience in the process of software construction (the design, speciﬁcation, documentation, implementation, and testing of substantial software). This project will also give you some practice in the design and implementation of a graphical user interface (GUI) application along with the use of several important development tools (particularly Android Studio and Git). It is also an opportunity to put into practice and reason about some of the concepts presented during this course such as Data Structures, Tokenizer, Parser, Data Persistence, Design Patterns, Software Testing, etc.");
+            map.put("content","This is post content " + i + ". The objective of this project is to gain some experience in the process of software construction (the design, speci铿乧ation, documentation, implementation, and testing of substantial software). This project will also give you some practice in the design and implementation of a graphical user interface (GUI) application along with the use of several important development tools (particularly Android Studio and Git). It is also an opportunity to put into practice and reason about some of the concepts presented during this course such as Data Structures, Tokenizer, Parser, Data Persistence, Design Patterns, Software Testing, etc.");
             //map.put("content","This is post content " + i );
             mList.add(map);
         }

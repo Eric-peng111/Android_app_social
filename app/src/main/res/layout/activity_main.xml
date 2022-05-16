@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/text"
+    android:background="@color/backGroundGray"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -14,14 +14,14 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/app_name"
         android:cropToPadding="false"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toStartOf="@+id/btn_nearby"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mypost" />
+        app:srcCompat="@drawable/mypost"
+        app:tint="@color/colorImageButton" />
 
     <ImageButton
         android:id="@+id/btn_nearby"
@@ -30,7 +30,6 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/app_name"
         android:cropToPadding="false"
@@ -39,7 +38,8 @@
         android:scaleY="1.2"
         app:layout_constraintEnd_toStartOf="@+id/btn_search"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nearby" />
+        app:srcCompat="@drawable/nearby"
+        app:tint="@color/colorImageButton" />
 
     <ImageButton
         android:id="@+id/btn_search"
@@ -48,7 +48,6 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/app_name"
         android:cropToPadding="false"
@@ -57,14 +56,14 @@
         android:scaleY="1.2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search" />
+        app:srcCompat="@drawable/search"
+        app:tint="@color/colorImageButton" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_newPost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
         android:layout_marginBottom="80dp"
         android:clickable="true"
         android:contentDescription="@string/app_name"
@@ -80,26 +79,25 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/app_name"
         android:cropToPadding="false"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toStartOf="@+id/btn_nearby"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_main" />
+        app:srcCompat="@drawable/user_main"
+        app:tint="@color/colorImageButton" />
 
     <TextView
         android:id="@+id/tv_welcome_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
         android:text="Welcome"
-        android:textColor="@color/dark"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -108,10 +106,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
+        android:fontFamily="sans-serif-light"
         android:text="SimonMeng0712"
-        android:textColor="@color/dark"
-        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_welcome_home" />
 
@@ -119,13 +117,13 @@
         android:id="@+id/lv_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="@color/lightBlue"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        android:divider="@color/backGroundGray"
+        android:dividerHeight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

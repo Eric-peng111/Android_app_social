@@ -13,10 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:ellipsize="end"
+        android:fontFamily="sans-serif"
         android:maxLines="1"
-        android:text="雨中漫步"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:padding="3dp"
+        android:text="Waling in the rain"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tv_content"
@@ -25,7 +27,11 @@
         android:layout_below="@id/tv_title"
         android:layout_marginLeft="10dp"
         android:ellipsize="end"
+        android:fontFamily="sans-serif-light"
         android:maxLines="5"
-        android:text="人生就像一场旅行，不必在乎目的地，在乎的是沿途的风景以及看风景的心情，让心灵去旅行"
+        android:padding="3dp"
+        android:text="Life is like a journey, do not care about the destination, care about is the scenery along the way and the mood to see the scenery, let the heart to travel"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
         android:textSize="16sp" />
 </RelativeLayout>

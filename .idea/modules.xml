@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-for-social-good-latest.iml" filepath="$PROJECT_DIR$/.idea/modules/app-for-social-good-latest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app-for-social-good-latest.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app-for-social-good-latest.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-for-social-good.iml" filepath="$PROJECT_DIR$/.idea/modules/app-for-social-good.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app-for-social-good.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app-for-social-good.app.iml" />
     </modules>
   </component>
 </project>

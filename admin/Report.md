@@ -49,6 +49,7 @@ The following is a report template to help your team successfully provide all th
 * UserProfileActivity.class
 * Report Writing: 
 * Slide preparation: 
+
 *u7341252, Enze Peng, I contribute 33% of the code. Here are my contributions:*
 * MainActivity.class
 * MyApplication.class
@@ -56,6 +57,7 @@ The following is a report template to help your team successfully provide all th
 * PostActivity.class
 * Report Writing: 
 * Slide preparation: 
+
 *u7370885, Yonghao Deng, I contribute 33% of the code. Here are my contributions:*
 * MyPostActivity.class: use the HashMap data structures
 * SearchActivity.class
@@ -64,6 +66,7 @@ The following is a report template to help your team successfully provide all th
 * container.class
 * Report Writing: 
 * Slide preparation: 
+
 *u7354208, Zihan Meng, I contribute 33% of the code. Here are my contributions:*
 * activity_content.xml
 * activity_login.xml

@@ -95,15 +95,14 @@ The following is a report template to help your team successfully provide all th
 When our group encounters conflict:
 
 1. Conduct an emergency meeting to discuss the causes of the problem and document them
-2. 
--  In the initial discussion if we can unify the ideas of each member of the group, then we will directly make changes in the code.
--  In the initial discussion if we can not unify the ideas of each member of the group, we will review online materials or ask our tutors to finalize our uniform version.
+2.  -  In the initial discussion if we can unify the ideas of each member of the group, then we will directly make changes in the code.
+    -  In the initial discussion if we can not unify the ideas of each member of the group, we will review online materials or ask our tutors to    finalize our uniform version.
 
 ## Application Description
 
 Treehole is a social media application for college students that provides a platform for each college student to share their daily life or thoughts. Users can also view posts sent by others and like or comment on them after viewing them for the purpose of making friends and communicating with them, which helps students' mental health development.
-**Application Use Cases and or Examples**
 
+**Application Use Cases and or Examples**
 *[Provide use cases and examples of people using your application. Who are the target users of your application? How do the users use your application?]*
 
 *Here is a pet training application example*

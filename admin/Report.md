@@ -127,7 +127,7 @@ Treehole is a social media application for college students that provides a plat
 
 ## Application UML
 
-![ClassDiagramExample](./images/ClassDiagramExample.png)
+![ClassDiagramExample](./images/ClassDiagram.png)
 *[Replace the above with a class diagram. You can look at how we have linked an image here as an example of how you can do it too.]*
 
 ## Application Design and Decisions
@@ -234,7 +234,8 @@ Treehole is a social media application for college students that provides a plat
 
 *Here is an example:*
 
-- *[Team Meeting 1](./MeetingTemplate.md)*
-- ...
+- *[Team Meeting 1](./Meeting01.md)*
+- *[Team Meeting 2](./Meeting02.md)*
+- *[Team Meeting 3](./Meeting03.md)*
 
 *Either write your meeting minutes here or link to documents that contain them. There must be at least 4 team meetings. Note that you must commit your minute meetings shortly after your meeting has taken place (e.g., within 24h), otherwise your meeting minute will not be accepted.*

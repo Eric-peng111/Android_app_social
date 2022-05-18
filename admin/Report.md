@@ -43,14 +43,14 @@ The following is a report template to help your team successfully provide all th
 *[Code Implementation. Which features did you implement? Which classes or methods was each member involved in? Provide an approximate proportion in pecentage of the contribution of each member to the whole code implementation, e.g. 30%.]*
 
 
-*u7385305, Zhaoyu Cao, I contribute 33% of the code. Here are my contributions:*
+*u7385305, Zhaoyu Cao, I contribute 25% of the code. Here are my contributions:*
 * LoginActivity.class
 * ContentActivity.class
 * UserProfileActivity.class
 * Report Writing: 
 * Slide preparation: 
 
-*u7341252, Enze Peng, I contribute 33% of the code. Here are my contributions:*
+*u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:*
 * MainActivity.class
 * MyApplication.class
 * Post.class
@@ -58,7 +58,7 @@ The following is a report template to help your team successfully provide all th
 * Report Writing: 
 * Slide preparation: 
 
-*u7370885, Yonghao Deng, I contribute 33% of the code. Here are my contributions:*
+*u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:*
 * MyPostActivity.class: use the HashMap data structures
 * SearchActivity.class
 * RegisterActivity.class: Set an OnClickListener to the button of register.
@@ -67,7 +67,7 @@ The following is a report template to help your team successfully provide all th
 * Report Writing: 
 * Slide preparation: 
 
-*u7354208, Zihan Meng, I contribute 33% of the code. Here are my contributions:*
+*u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:*
 * activity_content.xml
 * activity_login.xml
 * activity_main.xml

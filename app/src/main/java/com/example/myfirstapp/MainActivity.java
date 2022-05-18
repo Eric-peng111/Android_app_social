@@ -1,10 +1,10 @@
 package com.example.myfirstapp;
 
 import android.content.Intent;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myfirstapp.userCollection.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseError;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btn_search;
     private ImageButton btn_nearby;
     private FloatingActionButton btn_post;
+    private ImageButton btn_myPost;
 
     private ListView lv_content;
     //    private List<String> content;
@@ -61,10 +61,12 @@ public class MainActivity extends AppCompatActivity {
         btn_nearby = findViewById(R.id.btn_nearby);
         btn_search = findViewById(R.id.btn_search);
         btn_post=(FloatingActionButton) findViewById(R.id.fab_newPost);
+        btn_myPost =findViewById(R.id.btn_myPost);
+
 
 
         //list view
-        lv_content = findViewById(R.id.lv_content);
+        lv_content = findViewById(R.id.mypost);
 
         User user=(User) getIntent().getExtras().getSerializable("USER");
         username=findViewById(R.id.tv_nickName_home);
@@ -81,15 +83,17 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int i=0;
                 for(DataSnapshot datas: dataSnapshot.getChildren()){
-                    if(datas.child("_id").getValue().toString().equals(Integer.toString(user.getID()))){
-                        i++;
-                        System.out.println(datas.child("_id").getValue().toString());
-                        Map<String,Object> post = new HashMap();
-                        post.put("title","#"+datas.child("index").getValue().toString()+" "+datas.child("title").getValue().toString() );
-                        System.out.println(datas.child("about").getValue().toString());
-                        post.put("content",datas.child("about").getValue().toString());
-                        mList.add(post);
-                    }
+                    i++;
+                    //System.out.println(datas.child("_id").getValue().toString());
+                    Map<String,Object> post = new HashMap();
+                    post.put("title","#"+datas.child("index").getValue().toString()+" "+datas.child("title").getValue().toString() );
+                    //System.out.println(datas.child("about").getValue().toString());
+                    post.put("content",datas.child("about").getValue().toString());
+                    mList.add(post);
+                    if(i>99)
+                        break;
+
+
                 }
                 mSimpleAdapter = new SimpleAdapter(MainActivity.this,mList,R.layout.list_item_layout,new String[]{"title","content"},new int[]{R.id.tv_title,R.id.tv_content});
                 lv_content.setAdapter(mSimpleAdapter);
@@ -109,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 //        for (int i = 0; i < 50; i++) {
 //            Map<String,Object> map = new HashMap();
 //            map.put("title","This is post title " + i);
-//            map.put("content","This is post content " + i + ". The objective of this project is to gain some experience in the process of software construction (the design, speciﬁcation, documentation, implementation, and testing of substantial software). This project will also give you some practice in the design and implementation of a graphical user interface (GUI) application along with the use of several important development tools (particularly Android Studio and Git). It is also an opportunity to put into practice and reason about some of the concepts presented during this course such as Data Structures, Tokenizer, Parser, Data Persistence, Design Patterns, Software Testing, etc.");
+//            map.put("content","This is post content " + i + ". The objective of this project is to gain some experience in the process of software construction (the design, speci铿乧ation, documentation, implementation, and testing of substantial software). This project will also give you some practice in the design and implementation of a graphical user interface (GUI) application along with the use of several important development tools (particularly Android Studio and Git). It is also an opportunity to put into practice and reason about some of the concepts presented during this course such as Data Structures, Tokenizer, Parser, Data Persistence, Design Patterns, Software Testing, etc.");
 //            //map.put("content","This is post content " + i );
 //            mList.add(map);
 //        }
@@ -147,6 +151,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent nearbyActivity= new Intent(MainActivity.this, NearbyActivity.class);
                 startActivity(nearbyActivity);
+            }
+        });
+
+        btn_myPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myPostActivity= new Intent(getApplicationContext(), MyPostActivity.class);
+                myPostActivity.putExtra("USER",user);
+                startActivity(myPostActivity);
             }
         });
 

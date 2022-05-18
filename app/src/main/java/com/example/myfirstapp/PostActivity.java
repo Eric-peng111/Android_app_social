@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myfirstapp.database_class.Post;
 import com.example.myfirstapp.userCollection.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
@@ -50,7 +51,7 @@ public class PostActivity extends AppCompatActivity {
                 String content = etml_content.getText().toString();
                 DateFormat dateFormat=new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
                 System.out.println(user.getID());
-                ref.push().setValue(new Post(user.getID(),content,app.getFb().getPost_num(),user.getUsername(),0,0,dateFormat.format(Calendar.getInstance().getTime()) ,title));
+                ref.push().setValue(new Post(user.getID(),content,app.getFb().getPost_num(),user.getUsername(),dateFormat.format(Calendar.getInstance().getTime()) ,title));
                 app.getFb().addPost();
                 Toast.makeText(PostActivity.this, "Post Successfully", Toast.LENGTH_LONG).show();
                 Intent contentActivity= new Intent(getApplicationContext(), ContentActivity.class);

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Home");
 
         btn_profile= findViewById(R.id.btn_profile);
-        btn_nearby = findViewById(R.id.btn_nearby);
+        //btn_nearby = findViewById(R.id.btn_nearby);
         btn_search = findViewById(R.id.btn_search);
         btn_post=(FloatingActionButton) findViewById(R.id.fab_newPost);
         btn_myPost =findViewById(R.id.btn_myPost);
@@ -146,13 +146,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //set a button to nearby
-        btn_nearby.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent nearbyActivity= new Intent(MainActivity.this, NearbyActivity.class);
-                startActivity(nearbyActivity);
-            }
-        });
+//        btn_nearby.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent nearbyActivity= new Intent(MainActivity.this, NearbyActivity.class);
+//                startActivity(nearbyActivity);
+//            }
+//        });
 
         btn_myPost.setOnClickListener(new View.OnClickListener() {
             @Override

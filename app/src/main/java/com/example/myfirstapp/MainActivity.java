@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //list view
-        lv_content = findViewById(R.id.mypost);
+        lv_content = findViewById(R.id.lv_mypost);
 
         User user=(User) getIntent().getExtras().getSerializable("USER");
         username=findViewById(R.id.tv_nickName_home);

@@ -41,7 +41,7 @@ public class MyPostActivity extends AppCompatActivity {
         //set title to "MyPost"
         getSupportActionBar().setTitle("MyPost");
         //list view
-        lv_content = findViewById(R.id.mypost);
+        lv_content = findViewById(R.id.lv_mypost);
 
 
         User user=(User) getIntent().getExtras().getSerializable("USER");

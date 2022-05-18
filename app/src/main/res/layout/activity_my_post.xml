@@ -8,7 +8,7 @@
     tools:context=".MyPostActivity">
 
     <ListView
-        android:id="@+id/lv_content"
+        android:id="@+id/lv_mypost"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="15dp"
@@ -17,9 +17,11 @@
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@color/lightBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
+        android:divider="@color/backGroundGray"
+        android:dividerHeight="15dp"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -114,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_welcome_home" />
 
     <ListView
-        android:id="@+id/lv_content"
+        android:id="@+id/lv_mypost"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"

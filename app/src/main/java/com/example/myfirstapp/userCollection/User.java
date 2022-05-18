@@ -7,22 +7,36 @@ public class User implements Participant {
     private int id;
     private String username;
     private String password;
-    //private String post;
+    private String email;
+    private String phone;
+
     private int hashcode;
 
     public UserSession US;
 
-    public User(int i,String user, String password){
+    public User(int i,String user, String password,String p,String e){
         this.username=user;
         this.password=password;
         this.id=i;
+        this.email=e;
+        this. phone=p;
         this.hashcode=hashCode();
         this.US=new UserSession();
 
     }
+    public User(String user, String password,String p,String e){
+        this.username=user;
+        this.password=password;
+        this.email=e;
+        this.phone=p;
+        this.hashcode=hashCode();
+        this.US=new UserSession();
+    }
     public User(String user, String password){
         this.username=user;
         this.password=password;
+        this.email=null;
+        this.phone=null;
         this.hashcode=hashCode();
         this.US=new UserSession();
     }
@@ -71,4 +85,7 @@ public class User implements Participant {
     public String getPassword() {
         return password;
     }
+
+    public String getEmail(){ return email; }
+    public String getPhone(){ return  phone;}
 }

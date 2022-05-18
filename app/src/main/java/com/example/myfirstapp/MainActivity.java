@@ -167,8 +167,9 @@ public class MainActivity extends AppCompatActivity {
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent loginActivity= new Intent(MainActivity.this, UserProfileActivity.class);
-                startActivity(loginActivity);
+                Intent UserProfileActivity= new Intent(MainActivity.this, UserProfileActivity.class);
+                UserProfileActivity.putExtra("USER",user);
+                startActivity(UserProfileActivity);
             }
         });
 

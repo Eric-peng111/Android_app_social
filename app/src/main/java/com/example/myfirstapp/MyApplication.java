@@ -83,7 +83,7 @@ public class MyApplication extends Application{
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] tokens = line.split(",");
-                UserTree.insert(new User(Integer.parseInt(tokens[0]),tokens[1],tokens[2]));
+                UserTree.insert(new User(Integer.parseInt(tokens[0]),tokens[1],tokens[2],tokens[3],tokens[4]));
                 addID();
             }
             bufferedReader.close();

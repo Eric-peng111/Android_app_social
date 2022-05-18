@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 //import android.support.v7.app.AppCompatActivity;
 import android.content.pm.PackageManager;
+import android.content.res.TypedArray;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -23,13 +24,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myfirstapp.userCollection.User;
+
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 public class UserProfileActivity extends AppCompatActivity {
     LocationManager locationManager;
     LocationListener locationListener;
-    TextView locationText;
+    TextView locationText, username,email,phone;
     private String country="";
     private Button btn_logout;
     private Button btn_manageAccounts;
@@ -42,8 +46,22 @@ public class UserProfileActivity extends AppCompatActivity {
         //set title to "User Profile"
         getSupportActionBar().setTitle("User Profile");
 
+        Random rand = new Random();
+        int rndInt = rand.nextInt(5) + 1; // n = the number of images, that start at idx 1
+        String imgName = "img" + rndInt;
+        int id = getResources().getIdentifier(imgName, "drawable", getPackageName());
+
         ImageView imageView = findViewById(R.id.iv_avatar);
-        imageView.setImageResource(R.drawable.user_profile_image);
+        imageView.setImageResource(id);
+        username=findViewById(R.id.tv_userName);
+        email=findViewById(R.id.tv_email);
+        phone=findViewById(R.id.tv_phone);
+
+        User user=(User) getIntent().getExtras().getSerializable("USER");
+
+        username.setText(user.getUsername());
+        email.setText(user.getEmail());
+        phone.setText(user.getPhone());
 
 
 

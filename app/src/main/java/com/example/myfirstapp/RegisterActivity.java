@@ -55,6 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
                 String input_email=email.getText().toString();
+                String phone=phonenum.getText().toString();
 
                 // Create an instance of the tokenizer.
                 Tokenizer e_tokenizer = new Tokenizer(input_email);
@@ -78,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 app = (MyApplication) getApplication();
-                app.getUser().insert(new User(app.addID(),name,pass));
+                app.getUser().insert(new User(app.addID(),name,pass,phone,input_email));
 
                 System.out.println(app.getUser());
                 Toast.makeText(RegisterActivity.this, "Register Successfully", Toast.LENGTH_LONG).show();

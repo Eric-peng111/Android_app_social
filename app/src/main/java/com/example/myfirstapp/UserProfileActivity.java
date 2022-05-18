@@ -1,15 +1,36 @@
 package com.example.myfirstapp;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+//import android.support.v7.app.AppCompatActivity;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class UserProfileActivity extends AppCompatActivity {
+import java.util.List;
+import java.util.Locale;
 
+public class UserProfileActivity extends AppCompatActivity {
+    LocationManager locationManager;
+    LocationListener locationListener;
+    TextView locationText;
+    private String country="";
     private Button btn_logout;
 
     @Override
@@ -19,6 +40,9 @@ public class UserProfileActivity extends AppCompatActivity {
 
         //set title to "User Profile"
         getSupportActionBar().setTitle("User Profile");
+
+        ImageView imageView = findViewById(R.id.iv_avatar);
+        imageView.setImageResource(R.drawable.user_profile_image);
 
 
         btn_logout = findViewById(R.id.btn_logout);
@@ -30,6 +54,63 @@ public class UserProfileActivity extends AppCompatActivity {
                 Toast.makeText(UserProfileActivity.this,"Logout success",Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(@NonNull Location location) {
+                locationText = findViewById(R.id.tv_location);
+                locationText.setText(getAddress(location));
+            }
+
+            @Override
+            public void onProviderDisabled(String provider){
+                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                startActivity(intent);
+            }
+        };
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                    || checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                    || checkSelfPermission(Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.INTERNET},10);
+            }
+        }
+
+        ImageButton loc = findViewById(R.id.btn_location);
+        loc.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("MissingPermission")
+            @Override
+            public void onClick(View view) {
+                locationManager.requestLocationUpdates("gps",1000,0,locationListener);
+            }
+        });
+    }
+
+    private String getAddress(Location location) {
+        List<Address> result = null;
+        try {
+            if (location != null) {
+                Geocoder gc = new Geocoder(this, Locale.getDefault());
+                result = gc.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                System.out.println(result);
+                if(result!=null && result.size()>0){
+
+                    for (int i=0;i<result.size();i++) {
+                        if (result.get(i) != null) {
+                            Address address = result.get(i);
+
+                            country = address.getLocality() + "," + address.getCountryName();
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return country;
     }
 
 

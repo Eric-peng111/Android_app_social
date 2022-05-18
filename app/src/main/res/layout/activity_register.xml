@@ -74,7 +74,7 @@
         android:background="@color/editText"
         android:ems="10"
         android:gravity="center|center_horizontal"
-        android:hint="STUDENT ID"
+        android:hint="NAME"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="#112D4E"

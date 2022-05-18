@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_home"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/comment" />
+        app:srcCompat="@drawable/submit_comment" />
 
     <ImageButton
         android:id="@+id/btn_home"
@@ -77,13 +77,15 @@
         android:id="@+id/deletepost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="189dp"
+        android:background="@color/white"
         android:text="Delete"
         android:textColor="#DF2719"
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/btn_submit"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_comment" />
 
@@ -190,7 +192,9 @@ What do I get in exchange? Ha! First of all, this should be a place where we sha
         android:background="@color/white"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Write your comment here."
         android:inputType="textMultiLine"
+        android:padding="15dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

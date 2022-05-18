@@ -9,12 +9,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myfirstapp.ParserToken.Parser.E_evaluate;
+import com.example.myfirstapp.ParserToken.Parser.P_evaluate;
+import com.example.myfirstapp.ParserToken.Tonkenizer.Tokenizer;
 import com.example.myfirstapp.userCollection.User;
 
 public class RegisterActivity extends AppCompatActivity {
 
 
-    private EditText et_reg_account,et_reg_pass,et_reg_repeat_pass;
+    private EditText et_reg_account,et_reg_pass,et_reg_repeat_pass,email,phonenum;
     private MyApplication app;
     private Button btn_signUp;
     @Override
@@ -26,6 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
         et_reg_pass = findViewById(R.id.et_regPassword);
         et_reg_repeat_pass = findViewById(R.id.et_regRepeatPassword);
         btn_signUp = findViewById(R.id.btn_signUp);
+        email=findViewById(R.id.et_email);
+        phonenum=findViewById(R.id.et_regPassword3);
 
         btn_signUp.setOnClickListener(new View.OnClickListener() {
 
@@ -49,6 +54,29 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this,"password confirmed failed",Toast.LENGTH_LONG).show();
                     return;
                 }
+                String input_email=email.getText().toString();
+
+                // Create an instance of the tokenizer.
+                Tokenizer e_tokenizer = new Tokenizer(input_email);
+                Tokenizer p_tokenizer= new Tokenizer(pass);
+
+                // Print out the expression from the parser.
+                E_evaluate emailcheck = new E_evaluate(e_tokenizer);
+                P_evaluate passwordcheck = new P_evaluate(p_tokenizer);
+                try{
+                    emailcheck.atdot();
+                }catch (E_evaluate.IllegalProductionException e){
+                    Toast.makeText(RegisterActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                    return;
+                }
+                try{
+                    passwordcheck.password();
+                }catch (P_evaluate.IllegalProductionException p){
+                    Toast.makeText(RegisterActivity.this,p.getMessage(),Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+
                 app = (MyApplication) getApplication();
                 app.getUser().insert(new User(app.addID(),name,pass));
 

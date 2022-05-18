@@ -26,19 +26,19 @@ public class E_evaluate {
     }
 
 
-    private boolean atdot(){
+    public boolean atdot(){
         if(this.tokenizer.hasNext()){
             if (this.tokenizer.current().getType() == Token.Type.AT){
                 count_at++;
                 if (count_at>1){
-                    throw new IllegalProductionException("More than two @");
+                    throw new IllegalProductionException("More than two '@' in email");
                 }
                 this.tokenizer.next();
             }
             else if(this.tokenizer.current().getType()==Token.Type.DOT){
                 count_dot++;
                 if (count_dot>1){
-                    throw new IllegalProductionException("More than two .");
+                    throw new IllegalProductionException("More than two '.' in email");
                 }
                 this.tokenizer.next();
             }
@@ -50,13 +50,13 @@ public class E_evaluate {
         }
         else{
             if(count_at==0)
-                throw new IllegalProductionException("should use @");
+                throw new IllegalProductionException("should use @ in email");
             if(count_dot==0)
-                throw new IllegalProductionException("should use .");
+                throw new IllegalProductionException("should use '.' in email");
             if(!back_s.equals("com"))
             {
                 System.out.println("back_s="+back_s);
-                throw new IllegalProductionException("should use 'com' ");
+                throw new IllegalProductionException("should use 'com' in email ");
             }
 //            if(!Character.isUpperCase(front_s.charAt(0)))
 //                throw new IllegalProductionException("No capital letter in the beginning.");
@@ -75,7 +75,7 @@ public class E_evaluate {
                     else if(count_at==1&&count_dot==1)
                         back_s=back_s+this.tokenizer.current().getToken();
                     else if(count_at==0&&count_dot==1)
-                        throw new IllegalProductionException(".can't be front of @");
+                        throw new IllegalProductionException("dot can't be front of @ in email");
                     this.tokenizer.next();
                     this.front();
                 }
@@ -86,13 +86,13 @@ public class E_evaluate {
         else{
 
             if(count_at==0)
-                throw new IllegalProductionException("should use @");
+                throw new IllegalProductionException("should use @ in email");
             if(count_dot==0)
-                throw new IllegalProductionException("should use .");
+                throw new IllegalProductionException("should use '.' in email");
             if(!back_s.equals("com"))
             {
                 System.out.println("back_s="+back_s);
-                throw new IllegalProductionException("should use 'com' ");
+                throw new IllegalProductionException("should use 'com' in email");
             }
         }
     }

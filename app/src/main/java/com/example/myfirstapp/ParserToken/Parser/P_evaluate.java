@@ -21,14 +21,14 @@ public class P_evaluate {
         this.tokenizer = tokenizer;
     }
 
-    private void password(){
+    public void password(){
         if(this.tokenizer.hasNext()){
             s=s+this.tokenizer.current().getToken();
             this.tokenizer.next();
             this.password();
         }else
         {
-            if(Character.isUpperCase(s.charAt(0)))
+            if(!Character.isUpperCase(s.charAt(0)))
                 throw new IllegalProductionException("No capital letter in the beginning.");
             if(s.length()<8)
                 throw new IllegalProductionException("password need to be at least 8 digits");

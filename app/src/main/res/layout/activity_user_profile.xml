@@ -127,39 +127,17 @@
         app:srcCompat="@drawable/user_profile_image" />
 
     <TextView
-        android:id="@+id/tv_i_studentNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif-light"
-        android:text="STUDENT NO."
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_userName"
-        app:layout_constraintTop_toBottomOf="@+id/tv_userName" />
-
-    <TextView
         android:id="@+id/tv_userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="sans-serif"
         android:text="Zihan Meng"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/iv_avatar"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_studentNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="U7354208"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_i_studentNo"
-        app:layout_constraintTop_toBottomOf="@+id/tv_i_studentNo" />
 
     <Button
         android:id="@+id/btn_logout"
@@ -179,6 +157,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_manageAccounts"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif-light"
+        android:text="MANAGE ACCOUNTS"
+        android:textAlignment="center"
+        android:textColor="@color/lightBlue"
+        android:textSize="20sp"
+        android:theme="@style/LoginButton"
+        app:layout_constraintBottom_toTopOf="@+id/btn_logout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton

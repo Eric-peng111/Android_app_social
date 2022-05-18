@@ -7,12 +7,13 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4109375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4371482176360225" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.30701754385964913" />
+        <entry key="app/src/main/res/layout/activity_manage_account.xml" value="0.2271078875793291" />
         <entry key="app/src/main/res/layout/activity_my_post.xml" value="0.32834544677212485" />
         <entry key="app/src/main/res/layout/activity_nearby.xml" value="0.16002570694087404" />
         <entry key="app/src/main/res/layout/activity_post.xml" value="0.43095339888841383" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.32412280701754387" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.48703703703703705" />
-        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.30701754385964913" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.30701754385964913" />
         <entry key="app/src/main/res/layout/list_item_layout.xml" value="0.33442659239838085" />

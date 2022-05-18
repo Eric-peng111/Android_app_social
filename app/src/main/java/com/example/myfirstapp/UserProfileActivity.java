@@ -32,6 +32,7 @@ public class UserProfileActivity extends AppCompatActivity {
     TextView locationText;
     private String country="";
     private Button btn_logout;
+    private Button btn_manageAccounts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,10 @@ public class UserProfileActivity extends AppCompatActivity {
         imageView.setImageResource(R.drawable.user_profile_image);
 
 
+
         btn_logout = findViewById(R.id.btn_logout);
+        btn_manageAccounts = findViewById(R.id.btn_manageAccounts);
+
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +59,14 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
+
+        btn_manageAccounts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent manageAccountActivity = new Intent(UserProfileActivity.this,ManageAccountActivity.class);
+                startActivity(manageAccountActivity);
+            }
+        });
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {

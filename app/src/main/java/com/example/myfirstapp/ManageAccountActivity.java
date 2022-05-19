@@ -18,6 +18,7 @@ import com.example.myfirstapp.userCollection.User;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -32,14 +33,22 @@ public class ManageAccountActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        al.clear();
         setContentView(R.layout.activity_manage_account);
 
         lv_content=findViewById(R.id.accounts_list);
         ArrayList<User> u=app.getUser().traverse(app.getUser().getRoot());
 
-        for(int i=0;i<u.size();i++){
-            al.add(u.get(i).getUsername());
+//        for(int i=0;i<u.size();i++){
+//            al.add(u.get(i).getUsername());
+//        }
+
+        Iterator<User> it = u.iterator();
+        while(it.hasNext()) {
+            User i = it.next();
+            al.add(i.getUsername());
         }
 
         System.out.println(al);

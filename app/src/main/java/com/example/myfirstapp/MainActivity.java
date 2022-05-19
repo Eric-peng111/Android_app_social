@@ -30,7 +30,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * @author Zihan Meng
+ * @feature The home screen of app
+ */
 public class MainActivity extends AppCompatActivity {
     MyApplication app= MyApplication.getApplication();
     private Button btn_login_test;
@@ -42,28 +45,25 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btn_myPost;
 
     private ListView lv_content;
-    //    private List<String> content;
-//    private ArrayAdapter<String> contentAdapter;
     private SimpleAdapter mSimpleAdapter;
     private List<Map<String,Object>> mList=new ArrayList<>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        FirebaseApp.initializeApp(getBaseContext());//initialize firebase
+        //initialize firebase
+        FirebaseApp.initializeApp(getBaseContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //set title to "Home"
         getSupportActionBar().setTitle("Home");
 
+        //Use findViewById function to match component
         btn_profile= findViewById(R.id.btn_profile);
-        //btn_nearby = findViewById(R.id.btn_nearby);
         btn_search = findViewById(R.id.btn_search);
         btn_post=(FloatingActionButton) findViewById(R.id.fab_newPost);
         btn_myPost =findViewById(R.id.btn_myPost);
-
-
 
         //list view
         lv_content = findViewById(R.id.lv_mypost);
@@ -75,29 +75,28 @@ public class MainActivity extends AppCompatActivity {
 
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-//        DatabaseReference ref = db.getReference("https://comp2100-6442-4f4de-default-rtdb.asia-southeast1.firebasedatabase.app/");
-
         DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
+
         ref.addValueEventListener(new ValueEventListener(){
+            /**
+             * @author Zihan Meng
+             * @feature Bind hashmap data to the listview using simple adapter.
+             */
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 int i=0;
                 for(DataSnapshot datas: dataSnapshot.getChildren()){
                     i++;
-                    //System.out.println(datas.child("_id").getValue().toString());
                     Map<String,Object> post = new HashMap();
                     post.put("title","#"+datas.child("index").getValue().toString()+" "+datas.child("title").getValue().toString() );
-                    //System.out.println(datas.child("about").getValue().toString());
                     post.put("content",datas.child("about").getValue().toString());
                     mList.add(post);
                     if(i>99)
                         break;
-
-
                 }
                 mSimpleAdapter = new SimpleAdapter(MainActivity.this,mList,R.layout.list_item_layout,new String[]{"title","content"},new int[]{R.id.tv_title,R.id.tv_content});
                 lv_content.setAdapter(mSimpleAdapter);
-
             }
 
             @Override
@@ -107,17 +106,11 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-
-        //btn_login_test =findViewById(R.id.btn_login_test);
-//        mList = new ArrayList<>();
-//        for (int i = 0; i < 50; i++) {
-//            Map<String,Object> map = new HashMap();
-//            map.put("title","This is post title " + i);
-//            map.put("content","This is post content " + i + ". The objective of this project is to gain some experience in the process of software construction (the design, speci铿乧ation, documentation, implementation, and testing of substantial software). This project will also give you some practice in the design and implementation of a graphical user interface (GUI) application along with the use of several important development tools (particularly Android Studio and Git). It is also an opportunity to put into practice and reason about some of the concepts presented during this course such as Data Structures, Tokenizer, Parser, Data Persistence, Design Patterns, Software Testing, etc.");
-//            //map.put("content","This is post content " + i );
-//            mList.add(map);
-//        }
-
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on items of list, When click item, show a toast to
+         * which item has been pressed and go to ContentActivity.
+         */
         lv_content.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -129,32 +122,28 @@ public class MainActivity extends AppCompatActivity {
                 int index=Integer.parseInt(getIndex(title));
                 contentActivity.putExtra("INDEX",(Serializable) index);
                 startActivity(contentActivity);
-
-
             }
         });
 
 
-        //set a button to search page
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on button, When click btn_search button, go to SearchActivity.
+         */
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent searchActivity= new Intent(MainActivity.this, SearchActivity.class);
-
-                searchActivity.putExtra("USER",user);;
+                searchActivity.putExtra("POST", (Serializable) mList);
                 startActivity(searchActivity);
             }
         });
 
-        //set a button to nearby
-//        btn_nearby.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent nearbyActivity= new Intent(MainActivity.this, NearbyActivity.class);
-//                startActivity(nearbyActivity);
-//            }
-//        });
 
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on button, When click btn_myPost button, go to MyPostActivity.
+         */
         btn_myPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,7 +153,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Set a button to profile
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on button, When click btn_profile button, go to UserProfileActivity.
+         */
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,6 +166,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on button, When click btn_post button, go to PostActivity.
+         */
         btn_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -188,6 +184,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * @author Zihan Meng
+     * @feature get index of given string.
+     * @param s
+     * @return r
+     */
     public String getIndex(String s){
         String r="";
         for(int i=1;i<s.length();i++){

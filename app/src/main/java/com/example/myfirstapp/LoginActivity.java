@@ -11,19 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myfirstapp.userCollection.User;
 
-//import com.google.firebase.FirebaseApp;
 /**
- * @author Zihan Meng
  * @author Zhaoyu Cao
- * @feature
- * @param
- * @return
+ * This class is to achieve login function.
  */
 public class LoginActivity extends AppCompatActivity {
     private Button btnLogin,btn_goSignUp;
     private EditText etAccount,etPassword;
 
-
+    // Introduce global variables
     MyApplication app= MyApplication.getApplication();
 
     @Override
@@ -41,8 +37,8 @@ public class LoginActivity extends AppCompatActivity {
         btn_goSignUp = findViewById(R.id.btn_signUp);
 
         /**
-         * @author Zihan Meng
-         * @feature Set setOnClickListener on button, When click btnLogin button, run loginCheck function .
+         * @author Zhaoyu Cao
+         * Set setOnClickListener on button, When click btnLogin button, run loginCheck function .
          */
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +53,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         /**
-         * @author Zihan Meng
-         * @feature Set setOnClickListener on button, When click btn_goSignUp button,  go to RegisterActivity.
+         * @author Zhaoyu Cao
+         * Set setOnClickListener on button, When click btn_goSignUp button,  go to RegisterActivity.
          */
         btn_goSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +68,13 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * @author Zhaoyu Cao
+     * Set setOnClickListener on button, When click btn_goSignUp button,  go to RegisterActivity.
+     * @param userName input username
+     * @param password input password
+     * @return true while finding username and password, otherwise false
+     */
     private boolean check(String userName,String password){
         if(app.getUser().find(new User(userName,password))==null)
             return false;
@@ -81,14 +83,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * @author Zhaoyu Cao
+     * Verify user name and password, If success go to mainActivity, else show a toast.
+     * @param account input username
+     * @param password input password
+     * go to mainActivity while verifying username and password successfully, and pass the user's information to the next activity
+     * otherwise show a toast saying wrong password.
+     */
     private void loginCheck(String account,String password){
-        /**
-         * @author Zihan Meng
-         * @feature Verify user name and password, If success go to mainActivity, else show a toast.
-         * @param  String account
-         * @param  String password
-         */
         if (check(account,password))
         {
             System.out.println("success");
@@ -102,15 +105,10 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(mainActivity);
         }
         else{
-//            app.getUser().traverse1();
             System.out.println("failed");
             Toast.makeText(LoginActivity.this,"Wrong password!",Toast.LENGTH_SHORT).show();
         }
 
-    }
-
-    public void printUser(){
-        app.getUser();
     }
 
 }

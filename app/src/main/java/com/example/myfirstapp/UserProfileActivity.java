@@ -29,22 +29,19 @@ import com.example.myfirstapp.userCollection.User;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+
 /**
- * @author Zihan Meng
  * @author Zhaoyu Cao
- * @feature
- * @param
- * @return
+ * @author Zihan Meng
+ * This class is to achieve user profile information function.
  */
 public class UserProfileActivity extends AppCompatActivity {
     LocationManager locationManager;
     LocationListener locationListener;
-    TextView locationText, username,email,phone;
-    private String country="";
+    TextView locationText, username, email, phone;
+    private String country = "";
     private Button btn_logout;
     private Button btn_manageAccounts;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,29 +52,32 @@ public class UserProfileActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("User Profile");
 
         Random rand = new Random();
-        int rndInt = rand.nextInt(5) + 1; // n = the number of images, that start at idx 1
+        // n = the number of images, that start at idx 1
+        int rndInt = rand.nextInt(5) + 1;
         String imgName = "img" + rndInt;
+        // get the unique id of an image
         int id = getResources().getIdentifier(imgName, "drawable", getPackageName());
 
         //Use findViewById function to match component
         ImageView imageView = findViewById(R.id.iv_avatar);
         imageView.setImageResource(id);
-        username=findViewById(R.id.tv_userName);
-        email=findViewById(R.id.tv_email);
-        phone=findViewById(R.id.tv_phone);
+        username = findViewById(R.id.tv_userName);
+        email = findViewById(R.id.tv_email);
+        phone = findViewById(R.id.tv_phone);
 
-        User user=(User) getIntent().getExtras().getSerializable("USER");
+        // Receive user information from the last activity
+        User user = (User) getIntent().getExtras().getSerializable("USER");
 
-
+        // Show the user information in UI
         username.setText(user.getUsername());
         email.setText(user.getEmail());
         phone.setText(user.getPhone());
         btn_logout = findViewById(R.id.btn_logout);
         btn_manageAccounts = findViewById(R.id.btn_manageAccounts);
 
-        if(user.getID()>0 && user.getID()<=4){
+        // Set visibility to some certain user
+        if (user.getID() > 0 && user.getID() <= 4) {
             btn_manageAccounts.setVisibility(View.VISIBLE);
-
         }
 
 
@@ -88,9 +88,9 @@ public class UserProfileActivity extends AppCompatActivity {
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent logout = new Intent(UserProfileActivity.this,LoginActivity.class);
+                Intent logout = new Intent(UserProfileActivity.this, LoginActivity.class);
                 startActivity(logout);
-                Toast.makeText(UserProfileActivity.this,"Logout success",Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserProfileActivity.this, "Logout success", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,12 +101,15 @@ public class UserProfileActivity extends AppCompatActivity {
         btn_manageAccounts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent manageAccountActivity = new Intent(UserProfileActivity.this,ManageAccountActivity.class);
+                Intent manageAccountActivity = new Intent(UserProfileActivity.this, ManageAccountActivity.class);
                 startActivity(manageAccountActivity);
             }
         });
 
-
+        /**
+         * @author Zhaoyu Cao
+         * Use demo code to achieve GPS function and reference will be in statement-of-originality file
+         */
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {
             @Override
@@ -116,17 +119,17 @@ public class UserProfileActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onProviderDisabled(String provider){
+            public void onProviderDisabled(String provider) {
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 startActivity(intent);
             }
         };
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
                     || checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                    || checkSelfPermission(Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED){
-                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.INTERNET},10);
+                    || checkSelfPermission(Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.INTERNET}, 10);
             }
         }
 
@@ -135,11 +138,17 @@ public class UserProfileActivity extends AppCompatActivity {
             @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
-                locationManager.requestLocationUpdates("gps",1000,0,locationListener);
+                locationManager.requestLocationUpdates("gps", 1000, 0, locationListener);
             }
         });
     }
 
+    /**
+     * @author Zhaoyu Cao
+     * @param location including longitude and latitude
+     * @return a string including city's name and province's name
+     * This method will get the location of a user and reference will be in statement-of-originality file
+     */
     private String getAddress(Location location) {
         List<Address> result = null;
         try {
@@ -147,9 +156,9 @@ public class UserProfileActivity extends AppCompatActivity {
                 Geocoder gc = new Geocoder(this, Locale.getDefault());
                 result = gc.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
                 System.out.println(result);
-                if(result!=null && result.size()>0){
+                if (result != null && result.size() > 0) {
 
-                    for (int i=0;i<result.size();i++) {
+                    for (int i = 0; i < result.size(); i++) {
                         if (result.get(i) != null) {
                             Address address = result.get(i);
 

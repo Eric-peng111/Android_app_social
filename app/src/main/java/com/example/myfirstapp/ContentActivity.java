@@ -1,6 +1,7 @@
 package com.example.myfirstapp;
 
 //import android.support.v7.app.AppCompatActivity;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,10 +28,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ldoublem.thumbUplib.ThumbUpView;
 
+/**
+ * @author Zhaoyu Cao
+ * This class is about functions in the content page.
+ */
 public class ContentActivity extends AppCompatActivity {
-
-    private boolean likeornot=false;
-    private boolean originlike=false;
+    private boolean likeOrNot = false;
+    private boolean originLike = false;
 
     private TextView tv_content_content;
     private TextView tv_title_content;
@@ -45,77 +49,72 @@ public class ContentActivity extends AppCompatActivity {
     private ImageButton submit;
     private Button delete;
 
-
-//
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
         FirebaseApp.initializeApp(getBaseContext());
 
-        tv_content_content=findViewById(R.id.tv_content_content);
-        tv_title_content=findViewById(R.id.tv_title_content);
-        star=(ThumbUpView) findViewById(R.id.tpv);
-        starcount=findViewById(R.id.starcount);
-        textName=findViewById(R.id.textName);
-        textTime=findViewById(R.id.textTime);
-        home=(ImageButton)findViewById(R.id.btn_home);
-        submit=(ImageButton)findViewById(R.id.btn_submit);
+        tv_content_content = findViewById(R.id.tv_content_content);
+        tv_title_content = findViewById(R.id.tv_title_content);
+        star = (ThumbUpView) findViewById(R.id.tpv);
+        starcount = findViewById(R.id.starcount);
+        textName = findViewById(R.id.textName);
+        textTime = findViewById(R.id.textTime);
+        home = (ImageButton) findViewById(R.id.btn_home);
+        submit = (ImageButton) findViewById(R.id.btn_submit);
         comment = findViewById(R.id.et_comment);
         delete = findViewById(R.id.deletepost);
 
+        // Get user information from the last activity
+        User user = (User) getIntent().getExtras().getSerializable("USER");
+        int index = (int) getIntent().getExtras().getSerializable("INDEX");
 
-
-
-
-
-        User user=(User) getIntent().getExtras().getSerializable("USER");
-        int index= (int) getIntent().getExtras().getSerializable("INDEX");
-
-
-
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-//        DatabaseReference ref = db.getReference("https://comp2100-6442-4f4de-default-rtdb.asia-southeast1.firebasedatabase.app/");
-
-        DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
-        //setup two reference for
+        // get database reference
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        // setup two reference for post and thumb up
         final DatabaseReference[] post_ref = new DatabaseReference[1];
         final DatabaseReference[] thumb_ref = new DatabaseReference[1];
-        ref.addValueEventListener(new ValueEventListener(){
+
+        /**
+         * @author Zhaoyu Cao
+         * Tranverse all the data in the firebase
+         */
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                int i=0;
-                for(DataSnapshot datas: dataSnapshot.getChildren()){
-                    if(datas.child("index").getValue().toString().equals(Integer.toString(index))){
-                        post_ref[0] =datas.getRef();
-
+                int i = 0;
+                for (DataSnapshot datas : dataSnapshot.getChildren()) {
+                    // find the post in the firebase and set content to UI
+                    if (datas.child("index").getValue().toString().equals(Integer.toString(index))) {
+                        post_ref[0] = datas.getRef();
                         tv_content_content.setText(datas.child("about").getValue().toString());
                         tv_title_content.setText(datas.child("title").getValue().toString());
                         textTime.setText(datas.child("time").getValue().toString());
                         textName.setText(datas.child("name").getValue().toString());
 
-                        Integer count=0;
-                        Integer userid= user.getID();
+                        Integer count = 0;
+                        Integer userid = user.getID();
+
                         //make delete button visible to deletion
-                        if(datas.child("_id").getValue().toString().equals(userid.toString())){
+                        if (datas.child("_id").getValue().toString().equals(userid.toString())) {
                             delete.setVisibility(View.VISIBLE);
                         }
 
-                        System.out.println("userid:"+user.getID());
-                        for(DataSnapshot t: datas.child("thumbup").getChildren()){
+                        System.out.println("userid:" + user.getID());
+                        // get the total number of thumb up
+                        for (DataSnapshot t : datas.child("thumbup").getChildren()) {
                             count++;
                             System.out.println(t.getValue().toString());
-                            if(t.getValue().toString().equals(userid.toString())){
+                            if (t.getValue().toString().equals(userid.toString())) {
                                 star.Like();
-                                likeornot=true;
-                                originlike=true;
-                                thumb_ref[0]=t.getRef();
+                                likeOrNot = true;
+                                originLike = true;
+                                thumb_ref[0] = t.getRef();
                             }
-
                         }
-                        if (originlike)
+                        // Set the right star count
+                        if (originLike)
                             count--;
                         starcount.setText(count.toString());
                         break;
@@ -133,82 +132,94 @@ public class ContentActivity extends AppCompatActivity {
 
         });
 
+        /**
+         * @author Zhaoyu Cao
+         * While clicking on thumb up, star count will add 1, otherwise minus 1.
+         */
         star.setOnThumbUp(new ThumbUpView.OnThumbUp() {
             @Override
             public void like(boolean like) {
                 if (like) {
                     starcount.setText(String.valueOf(Integer.valueOf(starcount.getText().toString()) + 1));
-                    likeornot=true;
+                    likeOrNot = true;
                 } else {
                     starcount.setText(String.valueOf(Integer.valueOf(starcount.getText().toString()) - 1));
-                    likeornot=false;
+                    likeOrNot = false;
 
                 }
             }
         });
 
-
+        // Make content have the sliding effect
         tv_content_content.setMovementMethod(new ScrollingMovementMethod());
 
-
+        /**
+         * @author Zhaoyu Cao
+         * Add the comment and store it to firebase
+         */
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String s = comment.getText().toString();
-                //post new comments to database
-                if(s!=""){
+                // Post new comments to database
+                if (s != "") {
                     post_ref[0].child("comments").push().setValue(new Comment(user.getID(), s));
                 }
-                //judge if needs to update 'like ' in database
-                if(likeornot==true && originlike==false){
+                // Judge if needs to update 'like ' in database
+                if (likeOrNot == true && originLike == false) {
                     post_ref[0].child("thumbup").push().setValue(user.getID());
-                }else if(likeornot==false && originlike==true){
+                } else if (likeOrNot == false && originLike == true) {
                     thumb_ref[0].removeValue();
                 }
 
-                Intent mainActivity= new Intent(getApplicationContext(), MainActivity.class);
-                mainActivity.putExtra("USER",user);
+                Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+                mainActivity.putExtra("USER", user);
                 startActivity(mainActivity);
             }
         });
 
-
+        /**
+         * @author Zhaoyu Cao
+         * While click home button, we will go to main page and send user information to it.
+         */
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainActivity= new Intent(getApplicationContext(), MainActivity.class);
-                mainActivity.putExtra("USER",user);
+                Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+                mainActivity.putExtra("USER", user);
                 startActivity(mainActivity);
-
             }
-
-
         });
 
+        /**
+         * @author Zhaoyu Cao
+         * Delete the post belonging to a user.
+         */
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // A pop-up window pops up to remind the user
                 AlertDialog.Builder builder = new AlertDialog.Builder(ContentActivity.this);
                 builder.setIcon(null);
                 builder.setTitle("Warning:");
                 builder.setMessage("Are you sure to delete it?");
 
-//              //Create OK and click events in the dialog box
 
+                // Create OK and click events in the dialog box
                 builder.setPositiveButton("confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         post_ref[0].removeValue();
 
                         Toast.makeText(getApplicationContext(), "Successfully deleted", Toast.LENGTH_SHORT).show();
-                        Intent mainActivity= new Intent(getApplicationContext(), MainActivity.class);
+                        Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
 
-                        mainActivity.putExtra("USER",user);
+                        mainActivity.putExtra("USER", user);
                         startActivity(mainActivity);
                     }
                 }).create().show();
-                //4. Create cancel and click events in the dialog box
+
+                //Create cancel and click events in the dialog box
                 builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

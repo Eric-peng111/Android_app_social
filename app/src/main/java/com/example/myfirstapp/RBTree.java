@@ -4,92 +4,89 @@ import com.example.myfirstapp.userCollection.User;
 
 import java.util.ArrayList;
 
+/**
+ * @author Enze Peng
+ * This class is about RBTree implementation.
+ */
 public class RBTree<T extends Comparable<T>> {
-
-
     private final static String BLACK = "BLACK";
     private final static String RED = "RED";
-
     private RBNode<T> root = null;
 
-
     /**
-     *找到插入结点
+     * find the node that needs to inserted
+     *
      * @param key
      */
-    public void insert(T key){
+    public void insert(T key) {
         RBNode<T> parent = null;
-        //新增的节点都为红色
-        RBNode<T> node = new RBNode<T>(RED,key);
+        // The new nodes are red
+        RBNode<T> node = new RBNode<T>(RED, key);
         RBNode<T> root = this.root;
-        //找到待插入的位置的母亲
-        while(root != null){
+        while (root != null) {
             parent = root;
             int cmp = root.key.compareTo(key);
-            if(cmp > 0){
+            if (cmp > 0) {
                 root = root.leftChild;
-            }else if(cmp < 0){
+            } else if (cmp < 0) {
                 root = root.rightChild;
-            }else{//若key相同，更新key值
+            } else {
+                // if key value is same, update key value
                 root.key = key;
 
             }
         }
-        //设置母亲
         node.parent = parent;
-        //如果母亲不为空，则设置在母亲的位置
-        if(parent != null){
-            if(key.compareTo(parent.key) > 0){
+        if (parent != null) {
+            if (key.compareTo(parent.key) > 0) {
                 parent.rightChild = node;
-            } else{
+            } else {
                 parent.leftChild = node;
             }
-        } else{//母亲为空，第一个节点，更新根节点，更新颜色
+        } else {
+            // if parent is null, update root node and update color
             this.root = node;
             node.setColor(BLACK);
         }
-        //判断满足红黑树的性质
+        // Check if it satisfies a red-black tree
         insertFix(node);
     }
 
     /**
-     * 左旋
-     * 首先获取右孩子，将右孩子的左孩子放到旋转节点的右边
-     * 在判断右孩子的左孩子为空吗，不为空设置母亲，在判断旋转节点有没有母亲没有母亲更新根节点，有母亲要设置母亲和儿子
-     * 最后在更新旋转节点的母亲，将旋转节点放在新的节点的左边
+     * Right rotation
+     *
      * @param rbNode
      * @return
      */
-    public void leftRotation(RBNode<T> rbNode){
-        //首先获取右孩子，将右孩子的左孩子放到旋转节点的右边
+    public void leftRotation(RBNode<T> rbNode) {
+        // First get the right child and place the left child of the right child to the right of the rotation node
         RBNode<T> rChild = rbNode.rightChild;
         rbNode.rightChild = rChild.leftChild;
 
-        //在判断右孩子的左孩子为空吗，不为空设置母亲，在判断旋转节点有没有母亲没有母亲更新根节点，有母亲要设置母亲和儿子
-        if(rChild.leftChild != null) {
+        if (rChild.leftChild != null) {
             rChild.leftChild.parent = rbNode;
         }
-        //更新孩子和母亲
-        setChildAndParent(rbNode,rChild);
-        //最后在更新旋转节点的母亲，将旋转节点放在新的节点的左边
+        // Update nodes
+        setChildAndParent(rbNode, rChild);
         rbNode.parent = rChild;
         rChild.leftChild = rbNode;
     }
 
     /**
-     * 当母亲不为空时，更新母亲和孩子,更新根结点颜色
+     * While parent is not null, update parent node and child node and update color of these
+     *
      * @param rbNode
      * @param rp
      */
-    public void setChildAndParent(RBNode<T> rbNode,RBNode<T> rp){
-        if(rbNode.parent != null) {
+    public void setChildAndParent(RBNode<T> rbNode, RBNode<T> rp) {
+        if (rbNode.parent != null) {
             rp.parent = rbNode.parent;
-            if(rbNode == rbNode.parent.leftChild) {
+            if (rbNode == rbNode.parent.leftChild) {
                 rbNode.parent.leftChild = rp;
             } else {
                 rbNode.parent.rightChild = rp;
             }
-        }else {//母亲为空，则将旋转之后的设为根节点
+        } else {
             this.root = rp;
             rp.parent = null;
             rp.setColor(BLACK);
@@ -97,63 +94,64 @@ public class RBTree<T extends Comparable<T>> {
     }
 
     /**
-     * 和左旋差不多
+     * Right rotation
+     *
      * @param rbNode
      */
-    public void rightRotation(RBNode<T> rbNode){
+    public void rightRotation(RBNode<T> rbNode) {
         RBNode<T> rp = rbNode.leftChild;
         rbNode.leftChild = rp.rightChild;
-        if(rp.rightChild != null) {
+        if (rp.rightChild != null) {
             rp.rightChild.parent = rbNode;
         }
-        setChildAndParent(rbNode,rp);
+        setChildAndParent(rbNode, rp);
         rbNode.parent = rp;
         rp.rightChild = rbNode;
 
     }
 
     /**
-     * 传入该节点，判断母亲的颜色
+     * Update nodes in a red-black tree
+     *
      * @param rbNode
      */
-    public  void insertFix(RBNode<T> rbNode) {
+    public void insertFix(RBNode<T> rbNode) {
         this.root.setColor(BLACK);
         RBNode<T> parent = rbNode.parent;
-        //母亲不为空，同时母亲为红色
-        if(parent != null && parent.getColor().equals(RED)){
-            //获取爷爷
+        if (parent != null && parent.getColor().equals(RED)) {
+            // get the node called grandfather
             RBNode<T> grandfather = rbNode.parent.parent;
-            //母亲是左孩子
-            if(parent == grandfather.leftChild){
-                //叔叔为空，或者黑色
-                if(grandfather.rightChild == null || grandfather.rightChild.getColor().equals(BLACK)){
-                    //传入节点为母亲的左孩子，都为坐右旋传入爷爷
-                    if(rbNode == parent.leftChild){
+            if (parent == grandfather.leftChild) {
+                // uncle node is null or uncle node is black
+                if (grandfather.rightChild == null || grandfather.rightChild.getColor().equals(BLACK)) {
+                    if (rbNode == parent.leftChild) {
                         grandfather.setColor(RED);
                         parent.setColor(BLACK);
                         rightRotation(grandfather);
-                    } else { //为母亲的右孩子，左旋 传入母亲
+                    } else {
+                        // take a left rotation
                         leftRotation(parent);
-                        //将两个红色放在一条线上继续向上在判断，将母亲看成是新插入的节点，继续判断
+                        // Do recursive operations
                         insertFix(parent);
                     }
-                } else { //叔叔存在，同时为黑色，设置爷爷为红色，母亲和叔叔为黑色，将爷爷看成新插入的节点继续判断
+                } else {
+                    //  uncle node is not null and uncle node is black
                     grandfather.setColor(RED);
                     grandfather.rightChild.setColor(BLACK);
                     parent.setColor(BLACK);
                     insertFix(grandfather);
                 }
-            } else{//母亲是右孩子，道理同上，在同一条线上旋转传入爷爷
-                if(grandfather.leftChild == null || grandfather.leftChild.getColor().equals(BLACK)){
-                    if(rbNode == parent.rightChild){
+            } else {
+                if (grandfather.leftChild == null || grandfather.leftChild.getColor().equals(BLACK)) {
+                    if (rbNode == parent.rightChild) {
                         grandfather.setColor(RED);
                         parent.setColor(BLACK);
                         leftRotation(grandfather);
-                    } else{
+                    } else {
                         rightRotation(parent);
                         insertFix(parent);
                     }
-                } else{
+                } else {
                     grandfather.setColor(RED);
                     grandfather.leftChild.setColor(BLACK);
                     parent.setColor(BLACK);
@@ -165,50 +163,49 @@ public class RBTree<T extends Comparable<T>> {
 
 
     /**
-     * 删除操作
-     * @param key
+     * The deletion for a node
+     *
+     * @param root root node
+     * @param key  input node
      */
-    public void delete(RBNode<T> root,T key) {
+    public void delete(RBNode<T> root, T key) {
         RBNode<T> root1 = root;
         while (root1 != null) {
             int cmp = key.compareTo(root1.key);
             if (cmp > 0) {
                 root1 = root1.rightChild;
-
             } else if (cmp < 0) {
                 root1 = root1.leftChild;
-
             } else {
                 if (root1.leftChild == null && root1.rightChild == null) {
-                    //叶子为红
+                    // The leaf node is red
                     if (root1.getColor().equals(RED)) {
-                        if (root1.parent != null) {//可能删除
+                        if (root1.parent != null) {
                             if (root1.parent.leftChild == root1) {
                                 root1.parent.leftChild = null;
                             } else {
                                 root1.parent.rightChild = null;
                             }
-
                         } else {
                             this.root = null;
                         }
                     } else {
-                        deleteFix(root1,root1.key);
+                        deleteFix(root1, root1.key);
                     }
-                } else if (root1.leftChild != null && root1.rightChild != null) { //待删除双儿子
+                } else if (root1.leftChild != null && root1.rightChild != null) {
                     RBNode<T> replaceNode = this.findMin(root1.rightChild);
                     root1.key = replaceNode.key;
-                    delete(root1.rightChild,root1.key);
+                    delete(root1.rightChild, root1.key);
                 } else {
-                    if(root1.leftChild != null) {
+                    if (root1.leftChild != null) {
                         root1.key = root1.leftChild.key;
-                        delete(root1.leftChild,root1.key);
+                        delete(root1.leftChild, root1.key);
                     } else {
                         root1.key = root1.rightChild.key;
-                        delete(root1.rightChild,root1.key);
+                        delete(root1.rightChild, root1.key);
                     }
                 }
-                return ;
+                return;
             }
             if (root1 == null) {
                 System.out.println("没有该节点,删除失败");
@@ -218,11 +215,11 @@ public class RBTree<T extends Comparable<T>> {
     }
 
     /**
-     * 平衡修复
+     * Restore balance
      * @param rbNode
      * @param Key
      */
-    public void deleteFix (RBNode <T> rbNode, T Key){
+    public void deleteFix(RBNode<T> rbNode, T Key) {
         if (rbNode.parent == null) {
             rbNode.setColor(BLACK);
             return;
@@ -233,47 +230,49 @@ public class RBTree<T extends Comparable<T>> {
         } else {
             s = "1";
         }
-        if (s.equals("0")) { //待删节点在左边
+        if (s.equals("0")) {
+            // Node that need to delete is on the left
             RBNode<T> brother = rbNode.parent.rightChild;
-            //兄弟为红色
+            // Brother node is red
             if (brother.getColor().equals(RED)) {
                 rbNode.parent.setColor(RED);
                 brother.setColor(BLACK);
                 leftRotation(rbNode.parent);
                 deleteFix(rbNode, Key);
-            } else { //兄弟为黑色
-                //兄弟的两个孩子为空或者都是黑色
+            } else {
+                // Brother node is black
                 if ((brother.leftChild == null && brother.rightChild == null) || (brother.leftChild != null && brother.rightChild != null
                         && brother.leftChild.getColor().equals(BLACK
                 ) && brother.rightChild.getColor().equals(BLACK))) {
                     brother.setColor(RED);
-                    //兄弟的两个孩子为空或者都是黑色，父亲为红色
+                    // The children of brother node is null or they are black
+                    // Parent is red
                     if (brother.parent.getColor().equals(RED)) {
                         brother.parent.setColor(BLACK);
                         brother.setColor(RED);
-                        //针对向上调整不再删除的情况，下面的同这一条
-                        if(rbNode.key == Key){
+                        if (rbNode.key == Key) {
                             rbNode.parent.leftChild = null;
                         }
 
-                    } else { //兄弟的两个孩子为空或者都是黑色，父亲为黑色
-                        if(rbNode.key == Key) {
+                    } else {
+                        // The children of brother node is null or they are black
+                        // Parent is black
+                        //兄弟的两个孩子为空或者都是黑色，父亲为黑色
+                        if (rbNode.key == Key) {
                             rbNode.parent.leftChild = null;
                         }
                         brother.setColor(RED);
                         deleteFix(brother.parent, Key);
                     }
-                    //远侄子为红色
                 } else if (brother.rightChild != null && brother.rightChild.getColor().equals(RED)) {
                     String color = brother.parent.getColor();
                     brother.parent.setColor(BLACK);
                     brother.setColor(color);
                     leftRotation(brother.parent);
                     brother.rightChild.setColor(BLACK);
-                    if(rbNode.key == Key) {
+                    if (rbNode.key == Key) {
                         rbNode.parent.leftChild = null;
                     }
-                    //近侄子为红色
                 } else if (brother.leftChild != null && brother.leftChild.getColor().equals(RED)) {
                     String color = brother.leftChild.getColor();
                     brother.leftChild.setColor(brother.getColor());
@@ -282,35 +281,34 @@ public class RBTree<T extends Comparable<T>> {
                     deleteFix(rbNode, Key);
                 }
             }
-        } else { //待删结点在右边
+        } else {
+            // The node that need to delete is on the right
             RBNode<T> brother = rbNode.parent.leftChild;
-            //兄弟为红色
+            // The brother node is red
             if (brother.getColor().equals(RED)) {
                 rbNode.parent.setColor(RED);
                 brother.setColor(BLACK);
                 rightRotation(rbNode.parent);
                 deleteFix(rbNode, Key);
-            } else { //兄弟为黑色
-                //兄弟为黑色，两个侄子都是黑或者都是空
+            } else {
+                // The brother node is black
                 if ((brother.leftChild == null && brother.rightChild == null) || (brother.leftChild != null && brother.rightChild != null
                         && brother.leftChild.getColor().equals(BLACK
                 ) && brother.rightChild.getColor().equals(BLACK))) {
-                    //兄弟为黑色，两个侄子都是黑或者都是空，母亲为红色
+                    // The brother node is black and parent is red
                     if (rbNode.parent.getColor().equals(RED)) {
                         rbNode.parent.setColor(BLACK);
                         brother.setColor(RED);
-
-                        if(rbNode.key == Key) {
+                        if (rbNode.key == Key) {
                             rbNode.parent.rightChild = null;
                         }
-                    } else { //兄弟为黑色，两个侄子都是黑或者都是空，母亲为黑色
-                        if(rbNode.key == Key) {
+                    } else {
+                        if (rbNode.key == Key) {
                             rbNode.parent.rightChild = null;
                         }
                         brother.setColor(RED);
                         deleteFix(brother.parent, Key);
                     }
-                    //远侄子为红色
                 } else if (brother.leftChild != null && brother.leftChild.getColor().equals(RED)) {
                     String color = brother.parent.getColor();
                     brother.parent.setColor(BLACK);
@@ -318,7 +316,6 @@ public class RBTree<T extends Comparable<T>> {
                     rightRotation(brother.parent);
                     brother.leftChild.setColor(BLACK);
                     rbNode.parent.rightChild = null;
-                    //近侄子为红色
                 } else if (brother.rightChild != null && brother.rightChild.getColor().equals(RED)) {
                     String color = brother.rightChild.getColor();
                     brother.rightChild.setColor(brother.getColor());
@@ -331,37 +328,35 @@ public class RBTree<T extends Comparable<T>> {
     }
 
 
-
     /**
-     * 找最小结点
+     * Find the smallest node
+     *
      * @param root
      * @return
      */
-    public RBNode<T> findMin(RBNode<T> root){
-        while(root.leftChild != null) {
+    public RBNode<T> findMin(RBNode<T> root) {
+        while (root.leftChild != null) {
             root = root.leftChild;
         }
         return root;
     }
 
     /**
-     * 中序打印
+     * In-order traversal
      * @param root
      */
-    public  void Middle(RBNode<T> root){
-
-        if(root != null){
-
+    public void Middle(RBNode<T> root) {
+        if (root != null) {
             Middle(root.leftChild);
             System.out.println(root.key + root.color);
             Middle(root.rightChild);
         }
     }
-    ArrayList<T> x=new ArrayList<>();
-    public ArrayList traverse(RBNode<T> root){
 
-        if(root != null){
+    ArrayList<T> x = new ArrayList<>();
 
+    public ArrayList traverse(RBNode<T> root) {
+        if (root != null) {
             traverse(root.leftChild);
             System.out.println(root.key + root.color);
             x.add(root.key);
@@ -369,13 +364,13 @@ public class RBTree<T extends Comparable<T>> {
         }
         return x;
     }
-    public RBNode<T> getRoot(){
+
+    /**
+     * Get root node
+     */
+    public RBNode<T> getRoot() {
         return this.root;
     }
-
-
-
-
 
     /**
      * Initialize empty RBTree
@@ -384,23 +379,12 @@ public class RBTree<T extends Comparable<T>> {
         this.root = null;
     }
 
+    /**
+     * @author Enze Peng
+     * This class is to find a node for a certain node.
+     * @return node
+     */
     private RBNode<T> find(RBNode<T> x, T v) {
-        if (x== null) {
-            return null;
-        }
-
-        int cmp = v.compareTo(x.key);
-        if (cmp < 0)
-            return find(x.leftChild, v);
-        else if (cmp > 0)
-            return find(x.rightChild, v);
-        else
-            return x;
-    }
-
-
-    public RBNode<T> find(T v) {
-        RBNode<T> x=root;
         if (x == null) {
             return null;
         }
@@ -414,24 +398,42 @@ public class RBTree<T extends Comparable<T>> {
             return x;
     }
 
+    /**
+     * @author Enze Peng
+     * This class is to find a node.
+     * @return node
+     */
+    public RBNode<T> find(T v) {
+        RBNode<T> x = root;
+        if (x == null) {
+            return null;
+        }
 
+        int cmp = v.compareTo(x.key);
+        if (cmp < 0)
+            return find(x.leftChild, v);
+        else if (cmp > 0)
+            return find(x.rightChild, v);
+        else
+            return x;
+    }
 
-
-
-    public class RBNode<T extends Comparable<T> > {
-
-        String color ;
+    /**
+     * @author Enze Peng
+     * This class is defining a red-black tree.
+     */
+    public class RBNode<T extends Comparable<T>> {
+        String color;
         T key;
         RBNode<T> leftChild;
         RBNode<T> rightChild;
         RBNode<T> parent;
 
-
-        public RBNode(String color, T key){
-            //调自己的重载构造
-            this(color,key,null,null,null);
+        public RBNode(String color, T key) {
+            this(color, key, null, null, null);
         }
 
+        // define a constructor
         public RBNode(String color, T key, RBNode<T> leftChild, RBNode<T> rightChild, RBNode<T> parent) {
             this.color = color;
             this.key = key;
@@ -440,17 +442,16 @@ public class RBTree<T extends Comparable<T>> {
             this.parent = parent;
         }
 
-
+        // Set color method
         public void setColor(String color) {
             this.color = color;
         }
 
+        // Get color method
         public String getColor() {
             return color;
         }
     }
-
-
 
 
 }

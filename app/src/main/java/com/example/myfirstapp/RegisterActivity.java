@@ -54,23 +54,27 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this,"password confirmed failed",Toast.LENGTH_LONG).show();
                     return;
                 }
-                String input_email=email.getText().toString();
-                String phone=phonenum.getText().toString();
 
                 // Create an instance of the tokenizer.
-                Tokenizer e_tokenizer = new Tokenizer(input_email);
-                Tokenizer p_tokenizer= new Tokenizer(pass);
+
 
                 // Print out the expression from the parser.
-                E_evaluate emailcheck = new E_evaluate(e_tokenizer);
-                P_evaluate passwordcheck = new P_evaluate(p_tokenizer);
+
+                String input_email=email.getText().toString();
+                String phone=phonenum.getText().toString();
                 try{
+                    input_email=email.getText().toString();
+                    Tokenizer e_tokenizer = new Tokenizer(input_email);
+                    E_evaluate emailcheck = new E_evaluate(e_tokenizer);
                     emailcheck.atdot();
                 }catch (E_evaluate.IllegalProductionException e){
                     Toast.makeText(RegisterActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
                     return;
                 }
                 try{
+                    pass=et_reg_pass.getText().toString();
+                    Tokenizer p_tokenizer= new Tokenizer(pass);
+                    P_evaluate passwordcheck = new P_evaluate(p_tokenizer);
                     passwordcheck.password();
                 }catch (P_evaluate.IllegalProductionException p){
                     Toast.makeText(RegisterActivity.this,p.getMessage(),Toast.LENGTH_LONG).show();

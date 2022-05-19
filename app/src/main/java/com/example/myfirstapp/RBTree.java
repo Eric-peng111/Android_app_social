@@ -208,7 +208,7 @@ public class RBTree<T extends Comparable<T>> {
                 return;
             }
             if (root1 == null) {
-                System.out.println("没有该节点,删除失败");
+                System.out.println("No this node.Deletion failed.");
                 break;
             }
         }
@@ -257,7 +257,6 @@ public class RBTree<T extends Comparable<T>> {
                     } else {
                         // The children of brother node is null or they are black
                         // Parent is black
-                        //兄弟的两个孩子为空或者都是黑色，父亲为黑色
                         if (rbNode.key == Key) {
                             rbNode.parent.leftChild = null;
                         }
@@ -433,7 +432,7 @@ public class RBTree<T extends Comparable<T>> {
             this(color, key, null, null, null);
         }
 
-        // define a constructor
+        // Define a constructor
         public RBNode(String color, T key, RBNode<T> leftChild, RBNode<T> rightChild, RBNode<T> parent) {
             this.color = color;
             this.key = key;

@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Token {
     // The following enum defines different types of tokens. Example of accessing these: Token.Type.INT
-    public enum Type {INT, AT,LETTER,DOT,COM,CAPLETTER}
+    public enum Type {INT, AT,LETTER,DOT,COM,CAPLETTER,HEX,STAR}
 
 
     public static class IllegalTokenException extends IllegalArgumentException {

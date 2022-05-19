@@ -64,6 +64,10 @@ public class Tokenizer {
 
         else if(firstChar=='.')
             currentToken=new Token(".",Token.Type.DOT);
+        else if(firstChar=='#')
+            currentToken=new Token("#",Token.Type.HEX);
+        else if(firstChar=='*')
+            currentToken=new Token("*",Token.Type.STAR);
 
         else if(Character.isLetter(firstChar)&& Character.isLowerCase(firstChar))
         {

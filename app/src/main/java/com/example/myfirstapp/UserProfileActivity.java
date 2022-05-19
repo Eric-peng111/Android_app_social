@@ -68,11 +68,17 @@ public class UserProfileActivity extends AppCompatActivity {
 
         User user=(User) getIntent().getExtras().getSerializable("USER");
 
+
         username.setText(user.getUsername());
         email.setText(user.getEmail());
         phone.setText(user.getPhone());
         btn_logout = findViewById(R.id.btn_logout);
         btn_manageAccounts = findViewById(R.id.btn_manageAccounts);
+
+        if(user.getID()>0 && user.getID()<=4){
+            btn_manageAccounts.setVisibility(View.VISIBLE);
+
+        }
 
 
         /**

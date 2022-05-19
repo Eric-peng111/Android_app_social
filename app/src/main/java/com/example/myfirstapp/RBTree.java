@@ -2,6 +2,8 @@ package com.example.myfirstapp;
 
 import com.example.myfirstapp.userCollection.User;
 
+import java.util.ArrayList;
+
 public class RBTree<T extends Comparable<T>> {
 
 
@@ -114,7 +116,7 @@ public class RBTree<T extends Comparable<T>> {
      * 传入该节点，判断母亲的颜色
      * @param rbNode
      */
-    private  void insertFix(RBNode<T> rbNode) {
+    public  void insertFix(RBNode<T> rbNode) {
         this.root.setColor(BLACK);
         RBNode<T> parent = rbNode.parent;
         //母亲不为空，同时母亲为红色
@@ -335,7 +337,7 @@ public class RBTree<T extends Comparable<T>> {
      * @param root
      * @return
      */
-    private RBNode<T> findMin(RBNode<T> root){
+    public RBNode<T> findMin(RBNode<T> root){
         while(root.leftChild != null) {
             root = root.leftChild;
         }
@@ -346,7 +348,7 @@ public class RBTree<T extends Comparable<T>> {
      * 中序打印
      * @param root
      */
-    private  void Middle(RBNode<T> root){
+    public  void Middle(RBNode<T> root){
 
         if(root != null){
 
@@ -355,6 +357,22 @@ public class RBTree<T extends Comparable<T>> {
             Middle(root.rightChild);
         }
     }
+    ArrayList<T> x=new ArrayList<>();
+    public ArrayList traverse(RBNode<T> root){
+
+        if(root != null){
+
+            traverse(root.leftChild);
+            System.out.println(root.key + root.color);
+            x.add(root.key);
+            traverse(root.rightChild);
+        }
+        return x;
+    }
+    public RBNode<T> getRoot(){
+        return this.root;
+    }
+
 
 
 
@@ -395,6 +413,8 @@ public class RBTree<T extends Comparable<T>> {
         else
             return x;
     }
+
+
 
 
 

@@ -21,6 +21,9 @@ public class P_evaluate {
         this.tokenizer = tokenizer;
     }
 
+    /**
+     * iterate whole tokens to check passwords
+     */
     public void password(){
         if(this.tokenizer.hasNext()){
             s=s+this.tokenizer.current().getToken();

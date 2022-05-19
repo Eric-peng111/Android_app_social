@@ -25,7 +25,9 @@ public class E_evaluate {
         this.tokenizer = tokenizer;
     }
 
-
+    /**
+     * check at and dot to iterate whole tokenizer
+     */
     public boolean atdot(){
         if(this.tokenizer.hasNext()){
             if (this.tokenizer.current().getType() == Token.Type.AT){
@@ -63,6 +65,10 @@ public class E_evaluate {
         }
         return true;
     }
+
+    /**
+     * traverse tokenizer if not at or not dot
+     */
 
     private void front(){
         if(this.tokenizer.hasNext() ){

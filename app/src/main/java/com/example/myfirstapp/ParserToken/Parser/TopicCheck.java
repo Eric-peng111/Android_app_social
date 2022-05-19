@@ -25,7 +25,10 @@ public class TopicCheck {
         this.tokenizer = tokenizer;
     }
 
-
+    /**
+     * get tokens hex and star then do the splitting
+     * @return boolean
+     */
     public boolean check(){
         if(this.tokenizer.hasNext()){
             if (this.tokenizer.current().getType() == Token.Type.HEX){
@@ -48,6 +51,9 @@ public class TopicCheck {
         return true;
     }
 
+    /**
+     * if not hex and star, iterate until it is
+     */
     private void front(){
         if(this.tokenizer.hasNext() ){
             if(this.tokenizer.current().getType() != Token.Type.HEX&&this.tokenizer.current().getType() != Token.Type.STAR){

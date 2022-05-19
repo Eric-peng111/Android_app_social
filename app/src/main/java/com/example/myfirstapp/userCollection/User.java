@@ -2,6 +2,9 @@ package com.example.myfirstapp.userCollection;
 
 import com.example.myfirstapp.userCollection.userstate.UserSession;
 
+/**
+ * General user and their attributes
+ */
 public class User implements Participant {
 
     private int id;

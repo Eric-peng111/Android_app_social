@@ -68,6 +68,8 @@ public class SearchActivity extends AppCompatActivity {
         sb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                lv_content.setAdapter(null);
+                mList.clear();
                 String s=et_search.getText().toString();
 
                 Tokenizer tokenizer = new Tokenizer(s);
@@ -86,6 +88,7 @@ public class SearchActivity extends AppCompatActivity {
                 ref.addValueEventListener(new ValueEventListener(){
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
+
                         int i=0;
                         for(DataSnapshot datas: dataSnapshot.getChildren()){
                             if(topic.length()>0&&content.length()==0){
@@ -114,7 +117,7 @@ public class SearchActivity extends AppCompatActivity {
                                 }
                             }
                             else if(content.length()>0 && topic.length()>0){
-                                if(datas.child("title").getValue().toString().contains(topic) || datas.child("about").getValue().toString().contains(content)){
+                                if(datas.child("title").getValue().toString().contains(topic) && datas.child("about").getValue().toString().contains(content)){
                                     i++;
                                     //System.out.println(datas.child("_id").getValue().toString());
                                     Map<String,Object> post = new HashMap();
@@ -141,6 +144,7 @@ public class SearchActivity extends AppCompatActivity {
                     }
 
                 });
+
             }
         });
 

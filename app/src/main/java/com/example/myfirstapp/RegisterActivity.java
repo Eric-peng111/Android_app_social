@@ -33,7 +33,10 @@ public class RegisterActivity extends AppCompatActivity {
         phonenum=findViewById(R.id.et_regPassword3);
 
         btn_signUp.setOnClickListener(new View.OnClickListener() {
-
+            /**
+             * @author Yonghao Deng
+             * This method is used for new user registration
+             */
             @Override
             public void onClick(View view) {
                 String name = et_reg_account.getText().toString();
@@ -43,14 +46,17 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 if (TextUtils.isEmpty(name)) {
+                    //If the registration name is empty, a pop-up will appear "username is empty".
                     Toast.makeText(RegisterActivity.this, "username is empty", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if (TextUtils.isEmpty(pass)) {
+                    //If the registration password is empty, a pop-up will appear "password is empty".
                     Toast.makeText(RegisterActivity.this, "password is empty", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if(!TextUtils.equals(pass,repeat_pass)){
+                    //If the registration password  is not equal to the repeat password, a pop-up will appear "password confirmed failed".
                     Toast.makeText(RegisterActivity.this,"password confirmed failed",Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -62,11 +68,13 @@ public class RegisterActivity extends AppCompatActivity {
 
                 String input_email=email.getText().toString();
                 String phone=phonenum.getText().toString();
+                //This method uses tokenizer to determine the correctness of the registered mailbox format
                 try{
                     input_email=email.getText().toString();
                     Tokenizer e_tokenizer = new Tokenizer(input_email);
                     E_evaluate emailcheck = new E_evaluate(e_tokenizer);
                     emailcheck.atdot();
+                    //The email address you fill in needs to have @
                 }catch (E_evaluate.IllegalProductionException e){
                     Toast.makeText(RegisterActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
                     return;
@@ -87,6 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 System.out.println(app.getUser());
                 Toast.makeText(RegisterActivity.this, "Register Successfully", Toast.LENGTH_LONG).show();
+                //If the format of the above checks are all correct, a registration success message will pop up and the registration will be successful
                 Intent mainActivity= new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(mainActivity);
             }

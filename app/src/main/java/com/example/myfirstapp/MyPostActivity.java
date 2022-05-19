@@ -51,9 +51,8 @@ public class MyPostActivity extends AppCompatActivity {
         /**
          * @author Zihan Meng
          * @author Yonghao Deng
+         * This method stores the posts sent by the user in a hashmap.
          * @feature Bind hashmap data to the listview
-         * @param
-         * @param
          */
         ref.addValueEventListener(new ValueEventListener(){
             @Override
@@ -65,8 +64,9 @@ public class MyPostActivity extends AppCompatActivity {
                         System.out.println(datas.child("_id").getValue().toString());
                         Map<String,Object> post = new HashMap();
                         post.put("title","#"+datas.child("index").getValue().toString()+" "+datas.child("title").getValue().toString() );
-                        //System.out.println(datas.child("about").getValue().toString());
+                        //Store the title of the post in hashmap
                         post.put("content",datas.child("about").getValue().toString());
+                        //Store the content of the post in hashmap
                         mList.add(post);
                     }
                 }
@@ -101,8 +101,10 @@ public class MyPostActivity extends AppCompatActivity {
                 Toast.makeText(MyPostActivity.this,"You pressed " + title,Toast.LENGTH_SHORT).show();
                 Intent contentActivity= new Intent(getApplicationContext(), ContentActivity.class);
                 contentActivity.putExtra("USER",user);
+                //Passing on user data
                 int index=Integer.parseInt(getIndex(title));
                 contentActivity.putExtra("INDEX",(Serializable) index);
+                //Passing on user index data
                 startActivity(contentActivity);
 
 

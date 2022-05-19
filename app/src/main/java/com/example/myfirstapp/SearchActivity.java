@@ -85,26 +85,35 @@ public class SearchActivity extends AppCompatActivity {
 //        DatabaseReference ref = db.getReference("https://comp2100-6442-4f4de-default-rtdb.asia-southeast1.firebasedatabase.app/");
 
                 DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
+                //Pass in the Firebase
                 ref.addValueEventListener(new ValueEventListener(){
                     @Override
+                    /**
+                     * @author Yonghao Deng
+                     * This method is used to find the user's posts in a hashmap.
+                     * @feature Bind hashmap data to the listview
+                     */
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         int i=0;
                         for(DataSnapshot datas: dataSnapshot.getChildren()){
                             if(topic.length()>0&&content.length()==0){
                                 if(datas.child("title").getValue().toString().contains(topic) ){
+                                    //Data with keywords in the search title
                                     i++;
-                                    //System.out.println(datas.child("_id").getValue().toString());
                                     Map<String,Object> post = new HashMap();
                                     post.put("title","#"+datas.child("index").getValue().toString()+" "+datas.child("title").getValue().toString() );
-                                    //System.out.println(datas.child("about").getValue().toString());
+                                    //Store the title of the post in hashmap
                                     post.put("content",datas.child("about").getValue().toString());
+                                    //Store the content of the post in hashmap
                                     mList.add(post);
                                     if(i>99)
+                                        //search the valid data
                                         break;
                                 }
                             }else if(content.length()>0 && topic.length()==0){
                                 if(datas.child("about").getValue().toString().contains(content)){
+                                    //Data with keywords in the search content
                                     i++;
                                     //System.out.println(datas.child("_id").getValue().toString());
                                     Map<String,Object> post = new HashMap();
@@ -113,19 +122,23 @@ public class SearchActivity extends AppCompatActivity {
                                     post.put("content",datas.child("about").getValue().toString());
                                     mList.add(post);
                                     if(i>99)
+                                        //search the valid data
                                         break;
                                 }
                             }
                             else if(content.length()>0 && topic.length()>0){
                                 if(datas.child("title").getValue().toString().contains(topic) && datas.child("about").getValue().toString().contains(content)){
+                                    //Data with keywords in the search content and title
                                     i++;
                                     //System.out.println(datas.child("_id").getValue().toString());
                                     Map<String,Object> post = new HashMap();
                                     post.put("title","#"+datas.child("index").getValue().toString()+" "+datas.child("title").getValue().toString() );
-                                    //System.out.println(datas.child("about").getValue().toString());
+                                    //Store the title of the post in hashmap
                                     post.put("content",datas.child("about").getValue().toString());
+                                    //Store the content of the post in hashmap
                                     mList.add(post);
                                     if(i>99)
+                                        //search the valid data
                                         break;
                                 }
 
@@ -156,8 +169,10 @@ public class SearchActivity extends AppCompatActivity {
                 Toast.makeText(SearchActivity.this,"You pressed " + title,Toast.LENGTH_SHORT).show();
                 Intent contentActivity= new Intent(getApplicationContext(), ContentActivity.class);
                 contentActivity.putExtra("USER",user);
+                //Passing on user data
                 int index=Integer.parseInt(getIndex(title));
                 contentActivity.putExtra("INDEX",(Serializable) index);
+                //Passing on user index data
                 startActivity(contentActivity);
 
 

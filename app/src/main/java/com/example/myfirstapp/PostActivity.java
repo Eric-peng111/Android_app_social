@@ -36,8 +36,6 @@ public class PostActivity extends AppCompatActivity {
 
         FirebaseApp.initializeApp(getBaseContext());
 
-//        DatabaseReference ref = db.getReference("https://comp2100-6442-4f4de-default-rtdb.asia-southeast1.firebasedatabase.app/");
-
         DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
         et_post_title=findViewById(R.id.et_post_title);
         etml_content=findViewById(R.id.etml_content);

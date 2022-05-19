@@ -45,13 +45,16 @@ public class MyPostActivity extends AppCompatActivity {
 
 
         User user=(User) getIntent().getExtras().getSerializable("USER");
-
-
-
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-//        DatabaseReference ref = db.getReference("https://comp2100-6442-4f4de-default-rtdb.asia-southeast1.firebasedatabase.app/");
-
         DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
+
+        /**
+         * @author Zihan Meng
+         * @author Yonghao Deng
+         * @feature Bind hashmap data to the listview
+         * @param
+         * @param
+         */
         ref.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

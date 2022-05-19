@@ -29,7 +29,13 @@ import com.example.myfirstapp.userCollection.User;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
-
+/**
+ * @author Zihan Meng
+ * @author Zhaoyu Cao
+ * @feature
+ * @param
+ * @return
+ */
 public class UserProfileActivity extends AppCompatActivity {
     LocationManager locationManager;
     LocationListener locationListener;
@@ -37,6 +43,8 @@ public class UserProfileActivity extends AppCompatActivity {
     private String country="";
     private Button btn_logout;
     private Button btn_manageAccounts;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +59,7 @@ public class UserProfileActivity extends AppCompatActivity {
         String imgName = "img" + rndInt;
         int id = getResources().getIdentifier(imgName, "drawable", getPackageName());
 
+        //Use findViewById function to match component
         ImageView imageView = findViewById(R.id.iv_avatar);
         imageView.setImageResource(id);
         username=findViewById(R.id.tv_userName);
@@ -62,12 +71,14 @@ public class UserProfileActivity extends AppCompatActivity {
         username.setText(user.getUsername());
         email.setText(user.getEmail());
         phone.setText(user.getPhone());
-
-
-
         btn_logout = findViewById(R.id.btn_logout);
         btn_manageAccounts = findViewById(R.id.btn_manageAccounts);
 
+
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on button, When click btn_logout button, go to LoginActivity.
+         */
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +88,10 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
-
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on button, When click btn_manageAccounts button, go to ManageAccountActivity.
+         */
         btn_manageAccounts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +99,7 @@ public class UserProfileActivity extends AppCompatActivity {
                 startActivity(manageAccountActivity);
             }
         });
+
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {

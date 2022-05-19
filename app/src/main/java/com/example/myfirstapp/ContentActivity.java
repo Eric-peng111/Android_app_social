@@ -166,26 +166,17 @@ public class ContentActivity extends AppCompatActivity {
                     thumb_ref[0].removeValue();
                 }
 
-
-
-
                 Intent mainActivity= new Intent(getApplicationContext(), MainActivity.class);
-
                 mainActivity.putExtra("USER",user);
                 startActivity(mainActivity);
-
             }
-
-
         });
 
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent mainActivity= new Intent(getApplicationContext(), MainActivity.class);
-
                 mainActivity.putExtra("USER",user);
                 startActivity(mainActivity);
 
@@ -224,17 +215,7 @@ public class ContentActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "cancel", Toast.LENGTH_SHORT).show();
                     }
                 }).create().show();
-
-
-
-
-
             }
-
-
         });
-
-
-
     }
 }

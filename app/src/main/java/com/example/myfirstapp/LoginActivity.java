@@ -12,7 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myfirstapp.userCollection.User;
 
 //import com.google.firebase.FirebaseApp;
-
+/**
+ * @author Zihan Meng
+ * @author Zhaoyu Cao
+ * @feature
+ * @param
+ * @return
+ */
 public class LoginActivity extends AppCompatActivity {
     private Button btnLogin,btn_goSignUp;
     private EditText etAccount,etPassword;
@@ -20,29 +26,24 @@ public class LoginActivity extends AppCompatActivity {
 
     MyApplication app= MyApplication.getApplication();
 
-//    //user name and password for test
-//    //THIS IS ONLY FOR TEST
-//    //ONLY REMOVE WHEN "loginCheck" HAS BEEN DONE
-//    private String userName = "123456";
-//    private String pass = "123";
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        FirebaseApp.initializeApp(getBaseContext());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         //set title to "LOGIN"
         getSupportActionBar().setTitle("LOGIN");
 
+        //Use findViewById function to match component
         btnLogin = findViewById(R.id.btn_login);
         etAccount = findViewById(R.id.et_account);
         etPassword = findViewById(R.id.et_password);
         btn_goSignUp = findViewById(R.id.btn_signUp);
 
-        //set onclick event on LOGIN button
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on button, When click btnLogin button, run loginCheck function .
+         */
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +56,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+        /**
+         * @author Zihan Meng
+         * @feature Set setOnClickListener on button, When click btn_goSignUp button,  go to RegisterActivity.
+         */
         btn_goSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,10 +80,15 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 
-    //simple login check method
-    //TODO Modify this method to read user names and information from existing data structures
-    private void loginCheck(String account,String password){
 
+
+    private void loginCheck(String account,String password){
+        /**
+         * @author Zihan Meng
+         * @feature Verify user name and password, If success go to mainActivity, else show a toast.
+         * @param  String account
+         * @param  String password
+         */
         if (check(account,password))
         {
             System.out.println("success");

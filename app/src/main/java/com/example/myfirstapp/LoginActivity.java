@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
             System.out.println("success");
             Toast.makeText(LoginActivity.this,"Login success",Toast.LENGTH_SHORT).show();
             Intent mainActivity= new Intent(this, MainActivity.class);
-            User user=app.getUser().find(new User(account,password)).value;
+            User user=app.getUser().find(new User(account,password)).key;
 
             user.US.login(account,password);
 
@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(mainActivity);
         }
         else{
-            app.getUser().traverse1();
+//            app.getUser().traverse1();
             System.out.println("failed");
             Toast.makeText(LoginActivity.this,"Wrong password!",Toast.LENGTH_SHORT).show();
         }

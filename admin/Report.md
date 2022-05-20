@@ -60,8 +60,8 @@ The following is a report template to help your team successfully provide all th
 
 *u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:*
 * MyPostActivity.class: use the HashMap data structures
-* SearchActivity.class
-* RegisterActivity.class: Set an OnClickListener to the button of register.
+* SearchActivity.class: use the HashMap data structures
+* RegisterActivity.class: use the Tokenizer to restricted registration conditions
 * iterater.class: use the iterater design patterns
 * container.class
 * Report Writing: 
@@ -78,6 +78,7 @@ The following is a report template to help your team successfully provide all th
 * activity_search.xml
 * activity_user_profile.xml
 * list_item_layout.xml
+* MainActivity.class
 * Report Writing: 
 * Slide preparation: 
 
@@ -217,25 +218,28 @@ Treehole is a social media application for college students that provides a plat
 
 *[What features have you implemented?]*
 
-*Here is an example:*
+*Greater Data Usage, Handling and Sophistication*
+1. *Feature 1: Read data instances from multiple local ﬁles in different formats (JSON, XML or Bespoken). (easy)*
+2. *Feature 2: User proﬁle activity containing a media ﬁle (image, animation (e.g. gif), video). (easy)*
+3. *Feature 3: Use GPS information (see the demo presented by our tutors. For example, your app may use the latitude/longitude to show some information relevant to your app). (easy)*
+4. *Feature 4: Report viewer. Provide users with the ability to see a report of interactions with your app (e.g., total views, total likes, total raised for a campaign, etc, in a graphical manner.(medium)*
+5. *Feature 5: Deletion method of either a Red-Black Tree, AVL tree or B-Tree data structure. The deletion of nodes must serve a purpose within your application. (hard)*
 
-*Privacy*
-1. *Featue 1: Users may ... . (easy)*
-2. *Feature 2: A user must ... . (easy)*
-3. *Feature 3: A user can only ... . (medium)*
+*User Interactivity*
+1. *Feature 1: The ability to micro-interact with items in your app (e.g. like/dislike/support/report a post/message/event) [stored in-memory]. (easy)*
+2. *Feature 2: Scheduled actions. At least two different types of actions must be schedulable. For example, a user can schedule an item (e.g., launch a social cause, like an item, post a comment, etc). (medium)*
 
 *Firebase Integration*
-1. *Feature 1: Use Firebase to implement ... . (easy)*
-2. *Feature 2: Use Firebase to persist ... .(medium)*
-
-*List all features you have completed in their separate categories with their difficulty classification. If they are features that are suggested and approved, please state this somewhere as well.*
-
+1. *Feature 1: 1. Use Firebase to implement user Authentication/Authorisation. (easy)*
+2. *Feature 2: Use Firebase to persist all data used in your app (this item replaces the requirement to retrieve data from a local ﬁle) (medium)*
+3. *Feature 3: Using Firebase or another remote database to store user information and having the app updated as the remote database is updated without restarting the application. 
+   E.g. User A makes a transfer, user B on a separate instance of the application sees user A’s transfer appear on their app instance without restarting their application. (very hard)*
+   
 ## Team Meetings
-
-*Here is an example:*
 
 - *[Team Meeting 1](./Meeting01.md)*
 - *[Team Meeting 2](./Meeting02.md)*
 - *[Team Meeting 3](./Meeting03.md)*
+- *[Team Meeting 4](./Meeting04.md)*
 
-*Either write your meeting minutes here or link to documents that contain them. There must be at least 4 team meetings. Note that you must commit your minute meetings shortly after your meeting has taken place (e.g., within 24h), otherwise your meeting minute will not be accepted.*
+

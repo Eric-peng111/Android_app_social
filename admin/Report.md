@@ -191,56 +191,209 @@ For administrators, they can act as a normal user and use all the functions of u
 ## Application UML
 
 ![ClassDiagramExample](./images/ClassDiagram.png)
-*[Replace the above with a class diagram. You can look at how we have linked an image here as an example of how you can do it too.]*
 
 ## Application Design and Decisions
 
-*Please give clear and concise descriptions for each subsections of this part. It would be better to list all the concrete items for each subsection and give no more than `5` concise, crucial reasons of your design. Here is an example for the subsection `Data Structures`:*
-
-*I used the following data structures in my project:*
-
-1. *LinkedList*
-
-   * *Objective: It is used for storing xxxx for xxx feature.*
-
-   * *Locations: line xxx in XXX.java, ..., etc.*
-
-   * *Reasons:*
-
-     * *It is more efficient than Arraylist for insertion with a time complexity O(1)*
-
-     * *We don't need to access the item by index for this feature*
-
-2. ...
-
-3. ...
-
 **Data Structures**
 
-*[What data structures did your team utilise? Where and why?]*
+1. Maps
 
-**Design Patterns**
+   * Objective: It is used for storing required posts to be displayed in a Listview
 
-*[What design patterns did your team utilise? Where and why?]*
+   * Locations: 
+         
+      app\src\main\java\com\example\myfirstapp\MyPostActivity
 
-**Grammar(s)**
+      app\src\main\java\com\example\myfirstapp\ MainActivity
 
-<br> *Production Rules* <br>
-\<Non-Terminal> ::= \<some output>
-<br>
-\<Non-Terminal> ::= \<some output>
+      app\src\main\java\com\example\myfirstapp SearchActivity
 
-*[How do you design the grammar? What are the advantages of your designs?]*
+   * Reasons:
 
-*If there are several grammars, list them all under this section and what they relate to.*
+      Hashmaps is able to store key/value pairs which exactly fit storing the post that needs to store different features:
+
+      key: “post title” -> value “data”
+
+      key: “post content” -> value “data”
+
+    
+2. Arraylists
+
+   * Objective: It is used for storing simple strings to be displayed in a Listview
+
+   * Locations: app\src\main\java\com\example\myfirstapp\ ManageAccountActivity
+
+   * Reasons:
+
+      Arraylists is able to store simple item such as string as an ordered list. Then use the iterator pattern to print out.
+
+      User delete functions in ManageAccountActivity.
+
+3. Red-Black Tree
+
+   * Objective: It is used for all user information to make users stored in efficient data structure.
+
+   * Locations:
+         
+      app\src\main\java\com\example\myfirstapp\ RBTree
+
+      app\src\main\java\com\example\myfirstapp\ MyApplication
+
+   * Reasons:
+
+      To meet the requirement of app design, a new structure needs to be done. Red-black tree is a perfect data structure to make all-users be read ,stored, deleted and added efficiently
+
+      Abstract-type RBTree designed in RBTree.java
+
+      Global instance created in MyApplication.java
+
+**Design patterns**
+
+4. Singleton patterns
+
+   * Objective:It is used for create the class where only one instance of a class is created in all project file.
+
+   * Locations: app\src\main\java\com\example\myfirstapp\ Firebase
+
+
+   * Reasons:In one application of project, once created, there will be only one instance of firebase instance from beginning to the end. So singleton pattern is perfectly suitable to be used in such a class.
+
+5. *Iterator patterns*
+
+   * Objective:A method for accessing collections that can be used to iterate over collections like ArrayList and HashSet.
+
+   * Locations: 
+         
+      app\src\main\java\com\example\myfirstapp\ iterator
+
+      app\src\main\java\com\example\myfirstapp\ManageAccountActivity
+
+   * Reasons:
+
+      For all ordered data stored structure, iterator provides A method to access elements of a container object without exposing the inner details of the object, which maintain the security of data.
+
+      Main structure of iterator: iterator directory
+
+      Used in ManageAccountActivity
+
+6. Factory patterns
+
+   * Objective:Define an interface for creating objects, let subclasses decide which class to instantiate, and factory methods defer the instantiation of a class to its subclasses.
+
+   * Locations:app\src\main\java\com\example\myfirstapp\ userCollection
+
+   * Reasons:In user class to extend similar operations, only a new user class can be inherited, and the client only needs to understand the abstract Product and factory, simplifying use and extension.
+      
+7. State patterns:
+
+   * Objective:Allows an object to change its behavior when its internal state changes, and the object appears to modify its class.
+
+   * Locations:app\src\main\java\com\example\myfirstapp\userCollection\userstate
+
+   * Reasons:
+
+      The behavior of a class changes based on its state. This type of design pattern is behavioral. For the user class, users are meant to behave differently in different state. For example: login user can post and manage its own account, log out user cannot do anything except login.
+
+      Used in all the user(one of user’s attribute)
 
 **Tokenizer and Parsers**
 
-*[Where do you use tokenisers and parsers? How are they built? What are the advantages of the designs?]*
+* In our project: we use Tokenizer and Parsers in both search function and registering checking function.
+
+1). Search function:
+
+   * a.We create the rules of search function:
+         
+         “#”+topic
+
+         “*”+content
+
+      All pairs can be arrange in different orders with many times:
+
+         "#day*nice#work"
+
+         "*good#sad"
+      
+
+   * b.	How it works:
+      
+      1.From the rules, we get a string as a input
+
+      2.From basic tokens:
+
+         enum Type:
+
+            {INT,AT,LETTER,DOT,COM,CAPLETTER,HEX,STAR}
+
+         Tokenize input into a collection of tokens
+
+      3.Use TopicCheck as parser in parser folder to parse tokens into pieces we need
+
+2). registering checking
+
+   * a.We create the rules of search function:
+         
+      [int and letter][AT][LETTER][.][COM]
+
+   * b.	How it works:
+         
+      1.From the rules, we get random email or password written from front-end as a input
+
+      2.From basic tokens:
+
+         enum Type:
+
+            {INT,AT,LETTER,DOT,COM,CAPLETTER,HEX,STAR}
+
+         Tokenize input into a collection of tokens
+
+      3.Use E-evaluate and  as parser in parser folder to parse tokens to Count dot and @.Check Tokens before @ between dot ,between dot and @ after dot needs COM tokens.Return false exception message.
+
+
+
+**Grammar(s)**
+<br> Production Rules <br>
+
+* 1.Registering check
+
+   Email::={INT,LETTER },[AT],[LETTER],[.],[COM];
+
+   Password::=[CAPLETTER][LETTER AND INT];
+
+* 2.Search
+
+   Search::= {Topic|Content};
+
+   Topic::= [HEX],{LETTER|INT};
+
+   Content::= [STAR],{LETTER|INT};
+* For registering check:
+
+   Need to check tokens and then evaluate them to give wrong messages.We basically create tokens in order and than first find out @ AND DOT,Split into terms. During the traverse of tokens, counting to @ AND DOT needs to be done. From different steps: we evaluate and print error message.
+
+Evaluation:
+
+      1.if (count_at>1) "More than two '@' in email"
+
+      2.if (count_dot>1) "More than two '.' in email"
+
+      3.if(count_at==0),should use @ in email"
+
+      4.if(count_dot==0)should use '.' in email")
+
+      5.if !back_s.equals("com") should use 'com' in email
+
+      6.if(count_at==0&&count_dot==1)dot can't be front of @ in email"
+
+* For search function:
+
+   We basically get tokens starting from HEX and STAR and categorize them into two parts Topic and Content. Use collections of Tokens belonging to HEX and collections of Token belonging to STAR to do the firebase search.
+
+
 
 **Surpise Item**
 
-*[If you implement the surprise item, explain how your solution addresses the surprise task. What decisions do your team make in addressing the problem?]*
+
 
 **Other**
 

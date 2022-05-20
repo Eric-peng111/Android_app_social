@@ -60,8 +60,8 @@ The following is a report template to help your team successfully provide all th
 
 *u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:*
 * MyPostActivity.class: use the HashMap data structures
-* SearchActivity.class
-* RegisterActivity.class: Set an OnClickListener to the button of register.
+* SearchActivity.class: use the HashMap data structures
+* RegisterActivity.class: use the Tokenizer to restricted registration conditions
 * iterater.class: use the iterater design patterns
 * container.class
 * Report Writing: 

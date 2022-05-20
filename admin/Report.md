@@ -103,10 +103,12 @@ When our group encounters conflict:
 
 Treehole is a social media application for college students that provides a platform for each college student to share their daily life or thoughts. Users can also view posts sent by others and like or comment on them after viewing them for the purpose of making friends and communicating with them, which helps students' mental health development.
 
-**Application Use Cases and or Examples**
-*[Provide use cases and examples of people using your application. Who are the target users of your application? How do the users use your application?]*
+**Application Use Cases**
 
-*Here is a pet training application example*
+There are two user case diagrams to show our application. One is for user,and the other is for administrator.
+<div align="center"> <img src="./images/User case Diagram.png"/> <img src="./images/Admin user case Diagram.png"/></div>
+
+*Here is a Treehole application example*
 
 *Lisa is a student from China who is in his first year at the Australian National University and this is his first year in Australia.*
 1. *After living away from Lisa's parents in Australia for three months for the first time, she missed her parents very much*
@@ -124,7 +126,65 @@ Treehole is a social media application for college students that provides a plat
 * *Users can view suggestions for the school and make improvements*
 * *Users can monitor students' psychological status and provide online counseling for students with psychological problems*
 
-*List all the use cases in text descriptions or create use case diagrams. Please refer to https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/ for use case diagram.*
+**Application manual**
+
+Our application has two groups, one for users and one for administrators.
+
+For user, we provide several functions:
+
+**1.Register:** We allow people to register our app, and the registration information need to include name, e-mail, phone number, password.
+
+<div align="center"> <img src="./images/Register.png" width="300" height="600"/> </div>
+
+**2.Login:** User can login our app to enjoy it. User should input their name and password to achieve the login process.
+
+<div align="center"> <img src="./images/Login.png" width="300" height="600"/> </div>
+
+**3.Search a post:** Our app allows user to search for the posts they want. In addition, there are two principles to search for posts.
+
+- When user want to search for keywords in the title, they need to add # in front of the keywords.For example, if I want to search for “today” in the title, I need to input “#today” in the search box.
+
+<div align="center"> <img src="./images/Search-1.png" width="300" height="600"/> </div>
+
+- When user want to search for keywords in the content, they need to add * in front of the keywords. For example, if I want to search for “day” in the content, I need to input “*day” in the search box.
+
+<div align="center"> <img src="./images/Search-2.png" width="300" height="600"/> </div>
+
+- When user want to search for keywords in the content and title as a double limit, they need to add * and # in front of the keywords. For example, if I want to search for “day” in the title and “friend” in the content, I need to input “#day*friend” in the search box. The order is not important, but there can be no space between them.
+
+<div align="center"> <img src="./images/Search-3.png" width="300" height="600"/> </div>
+
+**4.User profile:** The page records user information, including user name, e-mail, location. User can also log out the app in this page.
+
+<div align="center"> <img src="./images/UserProfile.png" width="300" height="600"/> </div>
+
+- GPS: User can locate their position in this page. They just need to click the location button to achieve it. It will show the city name and the province name.
+
+<div align="center"> <img src="./images/GPS.png" width="300" height="600"/> </div>
+
+**5.Manage posts**
+
+- Delete posts: User can manage their posts in our app. In the main page, they need to click the first item at the top of bar to enter, and then click the post they want to delete, there is a delete button on the bottom of the bar. While clicking it, there will be a pop-up window to remind user and then they can decide whether to delete the post. If user want to cancel this operation, they just need to click the space out of pop-up window.
+
+<div align="center"> <img src="./images/DeletePosts.png" width="300" height="600" align="center"/> </div>
+
+**6.Post new posts**: In the main page, if user want to post new posts, they just click on ‘paper airplane’ icon and then enter the page. In this page, user can set the title and content that they want to post.
+
+<div align="center"> <img src="./images/NewPosts.png" width="300" height="600" align="center"/> </div>
+
+**7.Browse the posts**: In the main page, user can look through all the posts. In addition, they can thumb up a post and comment a post after clicking a post. 
+
+- Thumb up a post: If user like a post, they just click ‘heart’ icon to like it and then the ‘heart’ icon will full of orange.
+
+<div align="center"> <img src="./images/ThumbUp.png" width="300" height="600" align="center"/> </div>
+
+- Comment a post: If user comment a post, they just need to input the comment they want and then click the first item at the bottom of the bar to finish commenting.
+
+<div align="center"> <img src="./images/Comment.png" width="300" height="600" align="center"/> </div>
+
+For administrators, they can act as a normal user and use all the functions of users.In addition, they can manage accounts about users. 
+
+1. Manage accounts: administrators can delete users in the user-profile page. While deleting user, they need to long press on user name and then there will be a pop-up window to remind them whether to delete this user.
 
 ## Application UML
 

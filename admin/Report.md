@@ -31,7 +31,7 @@ The following is a report template to help your team successfully provide all th
 
 | UID | Name | Role |
 | :--- | :----: | ---: |
-| [u7385305] | [Zhaoyu Cao] | [Developer(Test)] |
+| [u7385305] | [Zhaoyu Cao] | [Developer(Function)] |
 | [u7341252] | [Enze Peng] | [Developer(Database)] |
 | [u7370885] | [Yonghao Deng] | [Developer(Function),PM] |
 | [u7354208] | [Zihan Meng] | [Developer(Front-End design)] |
@@ -47,6 +47,7 @@ The following is a report template to help your team successfully provide all th
 * LoginActivity.class
 * ContentActivity.class
 * UserProfileActivity.class
+* Firebase.class
 * Report Writing: 
 * Slide preparation: 
 
@@ -132,13 +133,26 @@ Our application has two groups, one for users and one for administrators.
 
 For user, we provide several functions:
 
-**1.Register:** We allow people to register our app, and the registration information need to include name, e-mail, phone number, password.
+**1.Login:** User can login our app to enjoy it. User should input their name and password to achieve the login process. 
 
-<div align="center"> <img src="./images/Register.png" width="200" height="400"/> </div>
-
-**2.Login:** User can login our app to enjoy it. User should input their name and password to achieve the login process.
+By default, we have some initial users that can login, which is stored in loginDetail.csv file. Here are username and password that can help you login below. 
+- Eric,Au123456
+- Carmelo,Au123456
+- Arthur,Au123456
+- Simon,Au123456
+- Ben,Au123456
+- Greg,Au123456
+- Eden,Au123456
+- John,Au123456
+- Amos,Au123456
 
 <div align="center"> <img src="./images/Login.png" width="200" height="400"/> </div>
+
+**2.Register:** We allow people to register our app, and the registration information need to include name, e-mail, phone number, password.
+
+We have a bug in this part, so while using this APP, you can use the user and password provided above to use the app.
+
+<div align="center"> <img src="./images/Register.png" width="200" height="400"/> </div>
 
 **3.Search a post:** Our app allows user to search for the posts they want. In addition, there are two principles to search for posts.
 
@@ -415,6 +429,28 @@ Evaluation:
 
 *List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
 
+1. *Bug 1:*
+
+- In user profile page, for GPS function, we use Geocoder library to achieve it. 
+- The emulator cannot locate your position ahead of time, so we need to go to MORE section of the emulator and set the point ahead of time.
+- Zhaoyu Cao and Yonghao Deng use API 30 and Pixel 4 emulator can run this function on their computers. However, Zihan Meng and Enze Peng cannot run this function and error saying that “Java.io.IOException: grpc failed”.
+
+2. *Bug 2:*
+
+- There are four administrators including Eric, Carmelo, Arthur, and Simon that can manage accounts.
+- While deleting a user there will be a pop-up window.
+- While clicking “CANCEL” at the pop-up window, the window will not disappear and we need to click other part out of pop-up window to return the page.
+- While long clicking “CONFIRM” at the pop-up window, the user will deleting from our database. However, when we return and click “MANAGE ACCOUNTS”, there will be repeated items to load in the page.
+- Actually the user is already deleted.
+
+3. *Bug 3:*
+
+- While using searching, our function only can visualize the result. If you click on the post after searching, the page will be blank and even the application will crash.
+
+4. *Bug 4:*
+
+- While registering a new user, even though all the information is in right format, while clicking sign up, the application sometimes will crash.
+
 ## Testing Summary
 
 *[What features have you tested? What is your testing coverage?]*
@@ -432,6 +468,14 @@ Evaluation:
 ## Implemented Features
 
 *[What features have you implemented?]*
+
+**Part 1: Basic App**
+1. *Users must be able to login (not necessarily sign up).*
+2. *Users must be able to load data/information (from file(s) or Firebase) and visualise it.*
+3. *Users must be able to search for information on your app. The search functionality must make use of a tokenizer and parser with a formal grammar of your own creation.*
+4. *There must be a data file with at least 2,500 valid data instances(in the firebase).*
+
+**Part 2: Additional features**
 
 *Greater Data Usage, Handling and Sophistication*
 1. *Feature 1: Read data instances from multiple local ﬁles in different formats (JSON, XML or Bespoken). (easy)*

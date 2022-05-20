@@ -68,16 +68,6 @@ u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:
 * MainActivity.class
 * Report Writing: Implemented Features, Team Members and Roles
 
-*[Code Design. What design patterns, data structures, did the involved member propose?]*
-
-*[UI Design. Specify what design did the involved member propose? What tools were used for the design?]*
-
-*[Report Writing. Which part of the report did the involved member write?]*
-
-*[Slide preparation. Were you responsible for the slides?]*
-
-*[Miscellaneous contributions. You are welcome to provide anything that you consider as a contribution to the project or team.]*
-
 ## Conflict Resolution Protocol
 When our group encounters conflict:
 

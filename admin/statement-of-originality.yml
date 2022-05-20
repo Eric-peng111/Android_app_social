@@ -7,60 +7,111 @@ declaration: >-
   own work, with the following exceptions:
 
 
-# add as many "name+comment" entries as necessary
-# (or remove it altogether if you haven't collaborated with anyone outside your group)
-collaboration:
-  - name:
-    comment: >-
-
-
 # add as many "url+licence+comment" entries as necessary
 # (or remove it altogether if you haven't used any external code)
 code:
-  - comment:
-    url:
-    licence:
+  - comment: "Get the idea about GPS information"
+    url: https://blog.csdn.net/ffa_ijj/article/details/51485628
+    licence: fair use
+
+  - comment: "Use the demo code to get longitude and latitude"
+    url: https://echo360.net.au/lesson/2ecb7205-614b-4c35-bfb1-04e85ed5ff17/classroom#sortDirection=desc
+    licence: fair use
+
+  - comment: "get the idea about State pattern"
+    url: https://www.tutorialspoint.com/design_pattern/state_pattern.htm
+    licence: fair use
+
+  - comment: "get the idea about firebase's red and write"
+    url: https://firebase.google.com/docs/database/web/read-and-write
+    licence: fair use
+
+  - comment: "get the idea about firebase for retrieving data"
+    url: https://www.geeksforgeeks.org/how-to-retrieve-data-from-the-firebase-realtime-database-in-android/
+    licence: fair use
+
+  - comment: "get the idea about thumb-up function"
+    url: https://github.com/ldoublem/ThumbUp
+    licence: fair use
+
+  - comment: "get the idea about generating data"
+    url: https://json-generator.com/
+    licence: fair use
+
+  - comment: "get the idea about traversal data in Firebase"
+    url: https://firebase.google.com/docs/reference/js/v8/firebase.database.DataSnapshot
+    licence: fair use
+
+  - comment: "get the idea about traversal data in Firebase"
+    url: https://firebase.google.com/docs/reference/js/v8/firebase.database.DataSnapshot
+    licence: fair use
+
+  - comment: "get the idea about dialog display"
+    url: https://developer.android.com/guide/topics/ui/dialogs#java
+    licence: fair use
+
+  - comment: "get the idea about dialog global application"
+    url: https://arthinking.blog.csdn.net/article/details/47977401?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-47977401-blog-117624388.pc_relevant_paycolumn_v3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-47977401-blog-117624388.pc_relevant_paycolumn_v3&utm_relevant_index=5
+    licence: fair use
+
+  - comment: "get the idea about dialog RBtree"
+    url: https://github.com/QKM-0203/Algorithm/blob/master/RBTree/src/RBTree.java
+    licence: fair use
+
 
 assets:
   - comment: "user_main.png"
     url: https://www.iconfont.cn/search/index?searchType=icon&q=%E5%8F%91%E5%B8%83&page=2&fills=&tag=&fromCollection=1
-    licence: fair usedat
+    licence: fair use
+
   - comment: "comment.png"
     url: https://www.iconfont.cn/search/index?searchType=icon&q=%E8%AF%84%E8%AE%BA
     licence: fair use
+
   - comment: "commit.png"
     url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=%E6%8F%90%E4%BA%A4
     licence: fair use
+
   - comment: "email.png"
     url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=email&page=1&fromCollection=1&fills=&tag=
     licence: fair use
+
   - comment: "home.png"
     url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=home&page=1&fromCollection=1&fills=&tag=
     licence: fair use
+
   - comment: "nearby.png"
     url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=%E9%99%84%E8%BF%91&page=1&fromCollection=1&fills=&tag=
     licence: fair use
+
   - comment: "phone.png"
     url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=dianhua&page=1&fromCollection=1&fills=&tag=
     licence: fair use
+
   - comment: "search.png"
     url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=search&page=2&fromCollection=1&fills=&tag=
     licence: fair use
+
   - comment: "submit_commit.png"
     url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=%E6%8F%90%E4%BA%A4&page=1&fromCollection=1&fills=&tag=
     licence: fair use
+
   - comment: "login.png"
     url: https://www.iconfont.cn/search/index?searchType=illustration&q=%E7%99%BB%E5%BD%95
     licence: fair use
+
   - comment: "user_main.png"
     url: https://www.iconfont.cn/search/index?searchType=icon&q=%E7%94%A8%E6%88%B7&page=2
     licence: fair use
+
   - comment: "login_user_icon.png"
     url: https://www.iconfont.cn/search/index?searchType=icon&q=%E7%94%A8%E6%88%B7&page=2
     licence: fair use
+
   - comment: "login_password_icon.png"
     url: https://www.iconfont.cn/search/index?searchType=icon&q=%E5%AF%86%E7%A0%81&page=1&fromCollection=1&fills=&tag=
     licence: fair use
+
 # for each member, write your name and uid here
 # remove any empty "name+uid" entries
 members:

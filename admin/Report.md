@@ -25,20 +25,26 @@
 ## Summary of Individual Contributions
 
 u7385305, Zhaoyu Cao, I contribute 25% of the code. Here are my contributions:
-* LoginActivity.class
-* ContentActivity.class
-* UserProfileActivity.class
-* Firebase.class
-* Report Writing: Conflict Resolution Protocol, Application UML, Summary of Known Errors and Bugs
-* Slide preparation: 
+* LoginActivity.class：use the RBTree database to store users
+* ContentActivity.class: use firebase to get the information about posts
+* UserProfileActivity.class: use the RBTree database and intent activities to get the information about users
+* Firebase.class: use the singleton design pattern
+* Administrator.java: use state design pattern
+* Participant.java：use state design pattern
+* User.java：use state design pattern
+* Report Writing: Conflict Resolution Protocol, Application description, Summary of Known Errors and Bugs
 
 u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
-* MainActivity.class
-* MyApplication.class
-* Post.class
+* MainActivity.class: use the HashMap data structures
+* MyApplication.class: use the RBTree store the user's data
+* database_class: Comment.class,Post.class,ThumbUp.class
+* Parser: E_evaluate.class,P_evaluate,TopicCheck : use the Tokenizer to check
+* userstate folder : NoSessionState,SessionState,UserSession,UserState
+* RBTree.class
 * PostActivity.class
+* RBTreeTest.java
 * Report Writing: Application Design and Decisions
-* Slide preparation: 
+* Slide preparation: All of the slides
 
 u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:
 * MyPostActivity.class: use the HashMap data structures
@@ -46,8 +52,7 @@ u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:
 * RegisterActivity.class: use the Tokenizer to restricted registration conditions
 * iterater.class: use the iterater design patterns
 * container.class
-* Report Writing: Summary of Individual Contributions,Team Meetings,Summary of Individual Contributions
-* Slide preparation: 
+* Report Writing: Summary of Individual Contributions, Team Meetings, Application UML
 
 u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:
 * activity_content.xml
@@ -60,19 +65,9 @@ u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:
 * activity_search.xml
 * activity_user_profile.xml
 * list_item_layout.xml
+* activity_manage_account.xml
 * MainActivity.class
 * Report Writing: Implemented Features, Team Members and Roles
-* Slide preparation: 
-
-*[Code Design. What design patterns, data structures, did the involved member propose?]*
-
-*[UI Design. Specify what design did the involved member propose? What tools were used for the design?]*
-
-*[Report Writing. Which part of the report did the involved member write?]*
-
-*[Slide preparation. Were you responsible for the slides?]*
-
-*[Miscellaneous contributions. You are welcome to provide anything that you consider as a contribution to the project or team.]*
 
 ## Conflict Resolution Protocol
 When our group encounters conflict:
@@ -457,17 +452,15 @@ If we create buttons for all the items listed in Listview, it will be nasty to h
 
 ## Testing Summary
 
-*[What features have you tested? What is your testing coverage?]*
+Features：Insertion and deletion of red-black trees
 
-*Here is an example:*
+Number of test cases: 53
 
-*Number of test cases: ...*
+Code coverage: 66%
 
-*Code coverage: ...*
+Types of tests created: Normal function
 
-*Types of tests created: ...*
-
-*Please provide some screenshots of your testing summary, showing the achieved testing coverage. Feel free to provide further details on your tests.*
+<div align="center"> <img src="./images/test.jpg" width="700" height="200" align="center"/> </div>
 
 ## Implemented Features
 

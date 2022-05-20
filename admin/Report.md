@@ -29,9 +29,9 @@ u7385305, Zhaoyu Cao, I contribute 25% of the code. Here are my contributions:
 * ContentActivity.class: use firebase to get the information about posts
 * UserProfileActivity.class: use the RBTree database and intent activities to get the information about users
 * Firebase.class: use the singleton design pattern
-* Administrator.java: use state design pattern
-* Participant.java：use state design pattern
-* User.java：use state design pattern
+* Administrator.java: Factory design pattern
+* Participant.java：Factory design pattern
+* User.java：Factory design pattern
 * Report Writing: Conflict Resolution Protocol, Application description, Summary of Known Errors and Bugs
 
 u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
@@ -40,9 +40,9 @@ u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
 * database_class: Comment.class,Post.class,ThumbUp.class
 * Parser: E_evaluate.class,P_evaluate,TopicCheck : use the Tokenizer to check
 * userstate folder : NoSessionState,SessionState,UserSession,UserState
-* RBTree.class
-* PostActivity.class
-* RBTreeTest.java
+* RBTree.class RBTree abstract type designed data structure 
+* PostActivity.class Activities for posting new posts 
+* RBTreeTest.java Test for RBTree function with both insert and deletion
 * Report Writing: Application Design and Decisions
 * Slide preparation: All of the slides
 

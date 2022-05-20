@@ -21,9 +21,6 @@ code:
     url:
     licence:
 
-
-# add as many "url+licence+comment" entries as necessary
-# (or remove it altogether if you haven't used any external assets)
 assets:
   - comment: "user_main.png"
     url: https://www.iconfont.cn/search/index?searchType=icon&q=%E5%8F%91%E5%B8%83&page=2&fills=&tag=&fromCollection=1

@@ -25,14 +25,14 @@
 ## Summary of Individual Contributions
 
 u7385305, Zhaoyu Cao, I contribute 25% of the code. Here are my contributions:
-* LoginActivity.class
-* ContentActivity.class
-* UserProfileActivity.class
-* Firebase.class
-* Administrator.java
-* Participant.java
-* User.java
-* Report Writing: Conflict Resolution Protocol, Application UML, Summary of Known Errors and Bugs
+* LoginActivity.class：use the RBTree database to store users
+* ContentActivity.class: use firebase to get the information about posts
+* UserProfileActivity.class: use the RBTree database and intent activities to get the information about users
+* Firebase.class: use the singleton design pattern
+* Administrator.java: use state design pattern
+* Participant.java：use state design pattern
+* User.java：use state design pattern
+* Report Writing: Conflict Resolution Protocol, Application description, Summary of Known Errors and Bugs
 
 u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
 * MainActivity.class: use the HashMap data structures
@@ -52,7 +52,7 @@ u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:
 * RegisterActivity.class: use the Tokenizer to restricted registration conditions
 * iterater.class: use the iterater design patterns
 * container.class
-* Report Writing: Summary of Individual Contributions,Team Meetings,Application Description
+* Report Writing: Summary of Individual Contributions, Team Meetings, Application UML
 
 u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:
 * activity_content.xml
@@ -65,6 +65,7 @@ u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:
 * activity_search.xml
 * activity_user_profile.xml
 * list_item_layout.xml
+* activity_manage_account.xml
 * MainActivity.class
 * Report Writing: Implemented Features, Team Members and Roles
 

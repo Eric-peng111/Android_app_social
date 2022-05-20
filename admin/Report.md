@@ -78,6 +78,7 @@ The following is a report template to help your team successfully provide all th
 * activity_search.xml
 * activity_user_profile.xml
 * list_item_layout.xml
+* MainActivity.class
 * Report Writing: 
 * Slide preparation: 
 

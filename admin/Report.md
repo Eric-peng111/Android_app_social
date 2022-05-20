@@ -1,19 +1,5 @@
 # [HENUers] Report
 
-The following is a report template to help your team successfully provide all the details necessary for your report in a structured and organised manner. Please give a straightforward and concise report that best demonstrates your project. Note that a good report will give a better impression of your project to the reviewers.
-
-*Here are some tips to write a good report:*
-
-* *Try to summarise and list the `bullet points` of your project as many as possible rather than give long, tedious paragraphs that mix up everything together.*
-
-* *Try to create `diagrams` instead of text descriptions, which are more straightforward and explanatory.*
-
-* *Try to make your report `well structured`, which is easier for the reviewers to capture the necessary information.*
-
-*We give instructions enclosed in square brackets [...] and examples for each sections to demonstrate what are expected for your project report.*
-
-*Please remove the instructions or examples in `italic` in your final report.*
-
 ## Table of Contents
 
 1. [Team Members and Roles](#team-members-and-roles)
@@ -43,7 +29,7 @@ The following is a report template to help your team successfully provide all th
 *[Code Implementation. Which features did you implement? Which classes or methods was each member involved in? Provide an approximate proportion in pecentage of the contribution of each member to the whole code implementation, e.g. 30%.]*
 
 
-*u7385305, Zhaoyu Cao, I contribute 25% of the code. Here are my contributions:*
+u7385305, Zhaoyu Cao, I contribute 25% of the code. Here are my contributions:
 * LoginActivity.class
 * ContentActivity.class
 * UserProfileActivity.class
@@ -51,7 +37,7 @@ The following is a report template to help your team successfully provide all th
 * Report Writing: 
 * Slide preparation: 
 
-*u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:*
+u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
 * MainActivity.class
 * MyApplication.class
 * Post.class
@@ -59,7 +45,7 @@ The following is a report template to help your team successfully provide all th
 * Report Writing: 
 * Slide preparation: 
 
-*u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:*
+u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:
 * MyPostActivity.class: use the HashMap data structures
 * SearchActivity.class: use the HashMap data structures
 * RegisterActivity.class: use the Tokenizer to restricted registration conditions
@@ -68,7 +54,7 @@ The following is a report template to help your team successfully provide all th
 * Report Writing: 
 * Slide preparation: 
 
-*u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:*
+u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:
 * activity_content.xml
 * activity_login.xml
 * activity_main.xml
@@ -109,23 +95,24 @@ Treehole is a social media application for college students that provides a plat
 There are two user case diagrams to show our application. One is for user,and the other is for administrator.
 <div align="center"> <img src="./images/User case Diagram.png"/> <img src="./images/Admin user case Diagram.png"/></div>
 
-*Here is a Treehole application example*
+Here is a Treehole application example
 
-*Lisa is a student from China who is in his first year at the Australian National University and this is his first year in Australia.*
-1. *After living away from Lisa's parents in Australia for three months for the first time, she missed her parents very much*
-2. *Lisa posted a post about her feelings about coming to Australia for the past three months and how much she misses her home and family.*
-3. *Carmelo saw Lisa's post, he first liked Lisa's post, then wrote a lot of comforting sentences in the comment section, and promised to go out with Lisa one weekend afternoon*
+Lisa is a student from China who is in his first year at the Australian National University and this is his first year in Australia.
+1. After living away from Lisa's parents in Australia for three months for the first time, she missed her parents very much
+2. Lisa posted a post about her feelings about coming to Australia for the past three months and how much she misses her home and family.
+3. Carmelo saw Lisa's post, he first liked Lisa's post, then wrote a lot of comforting sentences in the comment section, and promised to go out with Lisa one weekend afternoon
 
-*Targets Users: Students*
+Targets Users: Students
 
-* *Users can send their daily life to share with others.*
-* *Users can send their thoughts at any time, such as their love of food, thoughts of home, appreciation of others, etc.*
-* *Users can send some comments and opinions about the school.*
+* Users can send their daily life to share with others.
+* Users can send their thoughts at any time, such as their love of food, thoughts of home, appreciation of others, etc.
+* Users can send some comments and opinions about the school.
 
-*Target Users: Teachers,Faculty and Staff*
+Target Users: Teachers,Faculty and Staff
 
-* *Users can view suggestions for the school and make improvements*
-* *Users can monitor students' psychological status and provide online counseling for students with psychological problems*
+* Users can view suggestions for the school and make improvements.
+* Users can monitor students' psychological status and provide online counseling for students with psychological problems.
+* Users can delete the posts or users which they think bad.
 
 **Application manual**
 
@@ -133,7 +120,7 @@ Our application has two groups, one for users and one for administrators.
 
 For user, we provide several functions:
 
-**1.Login:** User can login our app to enjoy it. User should input their name and password to achieve the login process. 
+**1. Login:** User can login our app to enjoy it. User should input their name and password to achieve the login process. 
 
 By default, we have some initial users that can login, which is stored in loginDetail.csv file. Here are username and password that can help you login below. 
 - Eric,Au123456
@@ -148,13 +135,13 @@ By default, we have some initial users that can login, which is stored in loginD
 
 <div align="center"> <img src="./images/Login.png" width="200" height="400"/> </div>
 
-**2.Register:** We allow people to register our app, and the registration information need to include name, e-mail, phone number, password.
+**2. Register:** We allow people to register our app, and the registration information need to include name, e-mail, phone number, password.
 
 We have a bug in this part, so while using this APP, you can use the user and password provided above to use the app.
 
 <div align="center"> <img src="./images/Register.png" width="200" height="400"/> </div>
 
-**3.Search a post:** Our app allows user to search for the posts they want. In addition, there are two principles to search for posts.
+**3. Search a post:** Our app allows user to search for the posts they want. In addition, there are two principles to search for posts.
 
 - When user want to search for keywords in the title, they need to add # in front of the keywords.For example, if I want to search for “today” in the title, I need to input “#today” in the search box.
 
@@ -168,7 +155,7 @@ We have a bug in this part, so while using this APP, you can use the user and pa
 
 <div align="center"> <img src="./images/Search-3.png"width="200" height="400"/> </div>
 
-**4.User profile:** The page records user information, including user name, e-mail, location. User can also log out the app in this page.
+**4. User profile:** The page records user information, including user name, e-mail, location. User can also log out the app in this page.
 
 <div align="center"> <img src="./images/UserProfile.png" width="200" height="400"/> </div>
 
@@ -176,17 +163,17 @@ We have a bug in this part, so while using this APP, you can use the user and pa
 
 <div align="center"> <img src="./images/GPS.png" width="200" height="400"/> </div>
 
-**5.Manage posts**
+**5. Manage posts**
 
 - Delete posts: User can manage their posts in our app. In the main page, they need to click the first item at the top of bar to enter, and then click the post they want to delete, there is a delete button on the bottom of the bar. While clicking it, there will be a pop-up window to remind user and then they can decide whether to delete the post. If user want to cancel this operation, they just need to click the space out of pop-up window.
 
 <div align="center"> <img src="./images/DeletePosts.png" width="200" height="400" align="center"/> </div>
 
-**6.Post new posts**: In the main page, if user want to post new posts, they just click on ‘paper airplane’ icon and then enter the page. In this page, user can set the title and content that they want to post.
+**6. Post new posts**: In the main page, if user want to post new posts, they just click on ‘paper airplane’ icon and then enter the page. In this page, user can set the title and content that they want to post.
 
 <div align="center"> <img src="./images/NewPosts.png" width="200" height="400" align="center"/> </div>
 
-**7.Browse the posts**: In the main page, user can look through all the posts. In addition, they can thumb up a post and comment a post after clicking a post. 
+**7. Browse the posts**: In the main page, user can look through all the posts. In addition, they can thumb up a post and comment a post after clicking a post. 
 
 - Thumb up a post: If user like a post, they just click ‘heart’ icon to like it and then the ‘heart’ icon will full of orange.
 
@@ -265,16 +252,16 @@ For administrators, they can act as a normal user and use all the functions of u
 
 4. Singleton patterns
 
-   * Objective:It is used for create the class where only one instance of a class is created in all project file.
+   * Objective: It is used for create the class where only one instance of a class is created in all project file.
 
    * Locations: app\src\main\java\com\example\myfirstapp\ Firebase
 
 
-   * Reasons:In one application of project, once created, there will be only one instance of firebase instance from beginning to the end. So singleton pattern is perfectly suitable to be used in such a class.
+   * Reasons: In one application of project, once created, there will be only one instance of firebase instance from beginning to the end. So singleton pattern is perfectly suitable to be used in such a class.
 
-5. *Iterator patterns*
+5. Iterator patterns
 
-   * Objective:A method for accessing collections that can be used to iterate over collections like ArrayList and HashSet.
+   * Objective: A method for accessing collections that can be used to iterate over collections like ArrayList and HashSet.
 
    * Locations: 
          
@@ -292,17 +279,17 @@ For administrators, they can act as a normal user and use all the functions of u
 
 6. Factory patterns
 
-   * Objective:Define an interface for creating objects, let subclasses decide which class to instantiate, and factory methods defer the instantiation of a class to its subclasses.
+   * Objective: Define an interface for creating objects, let subclasses decide which class to instantiate, and factory methods defer the instantiation of a class to its subclasses.
 
-   * Locations:app\src\main\java\com\example\myfirstapp\ userCollection
+   * Locations: app\src\main\java\com\example\myfirstapp\ userCollection
 
-   * Reasons:In user class to extend similar operations, only a new user class can be inherited, and the client only needs to understand the abstract Product and factory, simplifying use and extension.
+   * Reasons: In user class to extend similar operations, only a new user class can be inherited, and the client only needs to understand the abstract Product and factory, simplifying use and extension.
       
 7. State patterns:
 
-   * Objective:Allows an object to change its behavior when its internal state changes, and the object appears to modify its class.
+   * Objective: Allows an object to change its behavior when its internal state changes, and the object appears to modify its class.
 
-   * Locations:app\src\main\java\com\example\myfirstapp\userCollection\userstate
+   * Locations: app\src\main\java\com\example\myfirstapp\userCollection\userstate
 
    * Reasons:
 
@@ -314,9 +301,9 @@ For administrators, they can act as a normal user and use all the functions of u
 
 * In our project: we use Tokenizer and Parsers in both search function and registering checking function.
 
-1). Search function:
+1) Search function:
 
-   * a.We create the rules of search function:
+   * a. We create the rules of search function:
          
          “#”+topic
 
@@ -329,11 +316,11 @@ For administrators, they can act as a normal user and use all the functions of u
          "*good#sad"
       
 
-   * b.	How it works:
+   * b. How it works:
       
-      1.From the rules, we get a string as a input
+      1. From the rules, we get a string as a input
 
-      2.From basic tokens:
+      2. From basic tokens:
 
          enum Type:
 
@@ -341,19 +328,19 @@ For administrators, they can act as a normal user and use all the functions of u
 
          Tokenize input into a collection of tokens
 
-      3.Use TopicCheck as parser in parser folder to parse tokens into pieces we need
+      3. Use TopicCheck as parser in parser folder to parse tokens into pieces we need
 
-2). registering checking
+2) Registering checking
 
-   * a.We create the rules of search function:
+   * a. We create the rules of search function:
          
       [int and letter][AT][LETTER][.][COM]
 
-   * b.	How it works:
+   * b. How it works:
          
-      1.From the rules, we get random email or password written from front-end as a input
+      1. From the rules, we get random email or password written from front-end as a input
 
-      2.From basic tokens:
+      2. From basic tokens:
 
          enum Type:
 
@@ -361,20 +348,20 @@ For administrators, they can act as a normal user and use all the functions of u
 
          Tokenize input into a collection of tokens
 
-      3.Use E-evaluate and  as parser in parser folder to parse tokens to Count dot and @.Check Tokens before @ between dot ,between dot and @ after dot needs COM tokens.Return false exception message.
+      3. Use E-evaluate and  as parser in parser folder to parse tokens to Count dot and @.Check Tokens before @ between dot ,between dot and @ after dot needs COM tokens.Return false exception message.
 
 
 
 **Grammar(s)**
 <br> Production Rules <br>
 
-* 1.Registering check
+* 1. Registering check
 
    Email::={INT,LETTER },[AT],[LETTER],[.],[COM];
 
    Password::=[CAPLETTER][LETTER AND INT];
 
-* 2.Search
+* 2. Search
 
    Search::= {Topic|Content};
 
@@ -387,17 +374,17 @@ For administrators, they can act as a normal user and use all the functions of u
 
 Evaluation:
 
-      1.if (count_at>1) "More than two '@' in email"
+      1. if (count_at>1) "More than two '@' in email"
 
-      2.if (count_dot>1) "More than two '.' in email"
+      2. if (count_dot>1) "More than two '.' in email"
 
-      3.if(count_at==0),should use @ in email"
+      3. if(count_at==0),should use @ in email"
 
-      4.if(count_dot==0)should use '.' in email")
+      4. if(count_dot==0)should use '.' in email")
 
-      5.if !back_s.equals("com") should use 'com' in email
+      5. if !back_s.equals("com") should use 'com' in email
 
-      6.if(count_at==0&&count_dot==1)dot can't be front of @ in email"
+      6. if(count_at==0&&count_dot==1)dot can't be front of @ in email"
 
 * For search function:
 
@@ -451,13 +438,13 @@ If we create buttons for all the items listed in Listview, it will be nasty to h
 
 ## Summary of Known Errors and Bugs
 
-1. *Bug 1:*
+1. Bug 1:
 
 - In user profile page, for GPS function, we use Geocoder library to achieve it. 
 - The emulator cannot locate your position ahead of time, so we need to go to MORE section of the emulator and set the point ahead of time.
 - Zhaoyu Cao and Yonghao Deng use API 30 and Pixel 4 emulator can run this function on their computers. However, Zihan Meng and Enze Peng cannot run this function and error saying that “Java.io.IOException: grpc failed”.
 
-2. *Bug 2:*
+2. Bug 2:
 
 - There are four administrators including Eric, Carmelo, Arthur, and Simon that can manage accounts.
 - While deleting a user there will be a pop-up window.
@@ -465,11 +452,11 @@ If we create buttons for all the items listed in Listview, it will be nasty to h
 - While long clicking “CONFIRM” at the pop-up window, the user will deleting from our database. However, when we return and click “MANAGE ACCOUNTS”, there will be repeated items to load in the page.
 - Actually the user is already deleted.
 
-3. *Bug 3:*
+3. Bug 3:
 
 - While using searching, our function only can visualize the result. If you click on the post after searching, the page will be blank and even the application will crash.
 
-4. *Bug 4:*
+4. Bug 4:
 
 - While registering a new user, even though all the information is in right format, while clicking sign up, the application sometimes will crash.
 
@@ -490,35 +477,35 @@ If we create buttons for all the items listed in Listview, it will be nasty to h
 ## Implemented Features
 
 **Part 1: Basic App**
-1. *Users must be able to login (not necessarily sign up).*
-2. *Users must be able to load data/information (from file(s) or Firebase) and visualise it.*
-3. *Users must be able to search for information on your app. The search functionality must make use of a tokenizer and parser with a formal grammar of your own creation.*
-4. *There must be a data file with at least 2,500 valid data instances(in the firebase).*
+1. Users must be able to login (not necessarily sign up).
+2. Users must be able to load data/information (from file(s) or Firebase) and visualise it.
+3. Users must be able to search for information on your app. The search functionality must make use of a tokenizer and parser with a formal grammar of your own creation.
+4. There must be a data file with at least 2,500 valid data instances(in the firebase).
 
 **Part 2: Additional features**
 
-*Greater Data Usage, Handling and Sophistication*
-1. *Feature 1: Read data instances from multiple local ﬁles in different formats (JSON, XML or Bespoken). (easy)*
-2. *Feature 2: User proﬁle activity containing a media ﬁle (image, animation (e.g. gif), video). (easy)*
-3. *Feature 3: Use GPS information (see the demo presented by our tutors. For example, your app may use the latitude/longitude to show some information relevant to your app). (easy)*
-4. *Feature 4: Report viewer. Provide users with the ability to see a report of interactions with your app (e.g., total views, total likes, total raised for a campaign, etc, in a graphical manner.(medium)*
-5. *Feature 5: Deletion method of either a Red-Black Tree, AVL tree or B-Tree data structure. The deletion of nodes must serve a purpose within your application. (hard)*
+Greater Data Usage, Handling and Sophistication
+1. Feature 1: Read data instances from multiple local ﬁles in different formats (JSON, XML or Bespoken). (easy)
+2. Feature 2: User proﬁle activity containing a media ﬁle (image, animation (e.g. gif), video). (easy)
+3. Feature 3: Use GPS information (see the demo presented by our tutors. For example, your app may use the latitude/longitude to show some information relevant to your app). (easy)
+4. Feature 4: Report viewer. Provide users with the ability to see a report of interactions with your app (e.g., total views, total likes, total raised for a campaign, etc, in a graphical manner.(medium)
+5. Feature 5: Deletion method of either a Red-Black Tree, AVL tree or B-Tree data structure. The deletion of nodes must serve a purpose within your application. (hard)
 
-*User Interactivity*
-1. *Feature 1: The ability to micro-interact with items in your app (e.g. like/dislike/support/report a post/message/event) [stored in-memory]. (easy)*
-2. *Feature 2: Scheduled actions. At least two different types of actions must be schedulable. For example, a user can schedule an item (e.g., launch a social cause, like an item, post a comment, etc). (medium)*
+User Interactivity
+1. Feature 1: The ability to micro-interact with items in your app (e.g. like/dislike/support/report a post/message/event) [stored in-memory]. (easy)
+2. Feature 2: Scheduled actions. At least two different types of actions must be schedulable. For example, a user can schedule an item (e.g., launch a social cause, like an item, post a comment, etc). (medium)
 
-*Firebase Integration*
-1. *Feature 1: 1. Use Firebase to implement user Authentication/Authorisation. (easy)*
-2. *Feature 2: Use Firebase to persist all data used in your app (this item replaces the requirement to retrieve data from a local ﬁle) (medium)*
-3. *Feature 3: Using Firebase or another remote database to store user information and having the app updated as the remote database is updated without restarting the application. 
-   E.g. User A makes a transfer, user B on a separate instance of the application sees user A’s transfer appear on their app instance without restarting their application. (very hard)*
+Firebase Integration
+1. Feature 1: Use Firebase to implement user Authentication/Authorisation. (easy)
+2. Feature 2: Use Firebase to persist all data used in your app (this item replaces the requirement to retrieve data from a local ﬁle) (medium)
+3. Feature 3: Using Firebase or another remote database to store user information and having the app updated as the remote database is updated without restarting the application. 
+   E.g. User A makes a transfer, user B on a separate instance of the application sees user A’s transfer appear on their app instance without restarting their application. (very hard)
    
 ## Team Meetings
 
-- *[Team Meeting 1](./Meeting01.md)*
-- *[Team Meeting 2](./Meeting02.md)*
-- *[Team Meeting 3](./Meeting03.md)*
-- *[Team Meeting 4](./Meeting04.md)*
+- [Team Meeting 1](./Meeting01.md)
+- [Team Meeting 2](./Meeting02.md)
+- [Team Meeting 3](./Meeting03.md)
+- [Team Meeting 4](./Meeting04.md)
 
 

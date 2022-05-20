@@ -1,4 +1,4 @@
-# [Team Name] Report
+# [HENUers] Report
 
 The following is a report template to help your team successfully provide all the details necessary for your report in a structured and organised manner. Please give a straightforward and concise report that best demonstrates your project. Note that a good report will give a better impression of your project to the reviewers.
 
@@ -134,57 +134,59 @@ For user, we provide several functions:
 
 **1.Register:** We allow people to register our app, and the registration information need to include name, e-mail, phone number, password.
 
-<div align="center"> <img src="./images/Register.png" width="300" height="600"/> </div>
+<div align="center"> <img src="./images/Register.png" width="200" height="400"/> </div>
 
 **2.Login:** User can login our app to enjoy it. User should input their name and password to achieve the login process.
 
-<div align="center"> <img src="./images/Login.png" width="300" height="600"/> </div>
+<div align="center"> <img src="./images/Login.png" width="200" height="400"/> </div>
 
 **3.Search a post:** Our app allows user to search for the posts they want. In addition, there are two principles to search for posts.
 
 - When user want to search for keywords in the title, they need to add # in front of the keywords.For example, if I want to search for “today” in the title, I need to input “#today” in the search box.
 
-<div align="center"> <img src="./images/Search-1.png" width="300" height="600"/> </div>
+<div align="center"> <img src="./images/Search-1.png" width="200" height="400"/> </div>
 
 - When user want to search for keywords in the content, they need to add * in front of the keywords. For example, if I want to search for “day” in the content, I need to input “*day” in the search box.
 
-<div align="center"> <img src="./images/Search-2.png" width="300" height="600"/> </div>
+<div align="center"> <img src="./images/Search-2.png" width="200" height="400"/> </div>
 
 - When user want to search for keywords in the content and title as a double limit, they need to add * and # in front of the keywords. For example, if I want to search for “day” in the title and “friend” in the content, I need to input “#day*friend” in the search box. The order is not important, but there can be no space between them.
 
-<div align="center"> <img src="./images/Search-3.png" width="300" height="600"/> </div>
+<div align="center"> <img src="./images/Search-3.png"width="200" height="400"/> </div>
 
 **4.User profile:** The page records user information, including user name, e-mail, location. User can also log out the app in this page.
 
-<div align="center"> <img src="./images/UserProfile.png" width="300" height="600"/> </div>
+<div align="center"> <img src="./images/UserProfile.png" width="200" height="400"/> </div>
 
 - GPS: User can locate their position in this page. They just need to click the location button to achieve it. It will show the city name and the province name.
 
-<div align="center"> <img src="./images/GPS.png" width="300" height="600"/> </div>
+<div align="center"> <img src="./images/GPS.png" width="200" height="400"/> </div>
 
 **5.Manage posts**
 
 - Delete posts: User can manage their posts in our app. In the main page, they need to click the first item at the top of bar to enter, and then click the post they want to delete, there is a delete button on the bottom of the bar. While clicking it, there will be a pop-up window to remind user and then they can decide whether to delete the post. If user want to cancel this operation, they just need to click the space out of pop-up window.
 
-<div align="center"> <img src="./images/DeletePosts.png" width="300" height="600" align="center"/> </div>
+<div align="center"> <img src="./images/DeletePosts.png" width="200" height="400" align="center"/> </div>
 
 **6.Post new posts**: In the main page, if user want to post new posts, they just click on ‘paper airplane’ icon and then enter the page. In this page, user can set the title and content that they want to post.
 
-<div align="center"> <img src="./images/NewPosts.png" width="300" height="600" align="center"/> </div>
+<div align="center"> <img src="./images/NewPosts.png" width="200" height="400" align="center"/> </div>
 
 **7.Browse the posts**: In the main page, user can look through all the posts. In addition, they can thumb up a post and comment a post after clicking a post. 
 
 - Thumb up a post: If user like a post, they just click ‘heart’ icon to like it and then the ‘heart’ icon will full of orange.
 
-<div align="center"> <img src="./images/ThumbUp.png" width="300" height="600" align="center"/> </div>
+<div align="center"> <img src="./images/ThumbUp.png" width="200" height="400" align="center"/> </div>
 
 - Comment a post: If user comment a post, they just need to input the comment they want and then click the first item at the bottom of the bar to finish commenting.
 
-<div align="center"> <img src="./images/Comment.png" width="300" height="600" align="center"/> </div>
+<div align="center"> <img src="./images/Comment.png" width="200" height="400" align="center"/> </div>
 
 For administrators, they can act as a normal user and use all the functions of users.In addition, they can manage accounts about users. 
 
 1. Manage accounts: administrators can delete users in the user-profile page. While deleting user, they need to long press on user name and then there will be a pop-up window to remind them whether to delete this user.
+
+<div align="center"> <img src="./images/ManageAcc-1.png" width="200" height="400"/> <img src="./images/ManageAcc-2.png" width="200" height="400"/><img src="./images/ManageAcc-3.png" width="200" height="400"/></div>
 
 ## Application UML
 

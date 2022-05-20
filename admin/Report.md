@@ -424,7 +424,39 @@ If we create buttons for all the items listed in Listview, it will be nasty to h
       2. Then create app.AlertDialog to show the confirming windows in order to fulfill funcitons.
 
       <div align="center"> <img src="./images/surprise_3.png" width="700" height="250" align="center"/> </div>
+3. Surpise Item3
 
+   * Problem: Like function needs to be dynamically presented in content activity with infinite clicks corresponding to light or dark mode. But only using the icon In Android studio will not be enough.
+
+         
+      1. Firebase like record updated needs to be real time
+ 
+
+      2. Like number counting needs to be changed as clicked up clicks down
+
+   * Solution: 
+         
+      1.	Use third party package to create views is better to present what we need to present. 
+
+      <div align="center"> <img src="./images/surprise_4.png" width="700" height="250" align="center"/> </div>
+
+4. Surpise Item4: User delete privacy
+
+   * Problem: user can only delete the post which belong to themselves, so the button needs be setup under condition
+
+         
+      1. Difference between Firebase get post id and user id. 
+ 
+
+      2. This is the collaboration between two data stores RBtree user and firebase posts
+
+
+   * Solution: 
+         
+      1. make the buttons invisible by default .Create linked key in posts which is user_id connected with RBtree users. And use both ids to compare if setup button visible(two ids are same: visible)
+
+
+      <div align="center"> <img src="./images/surprise_5.png" width="700" height="250" align="center"/> </div>
 
 ## Summary of Known Errors and Bugs
 

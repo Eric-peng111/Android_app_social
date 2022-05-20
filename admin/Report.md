@@ -232,8 +232,6 @@ Treehole is a social media application for college students that provides a plat
 
 ## Team Meetings
 
-*Here is an example:*
-
 - *[Team Meeting 1](./Meeting01.md)*
 - *[Team Meeting 2](./Meeting02.md)*
 - *[Team Meeting 3](./Meeting03.md)*

@@ -20,7 +20,7 @@
 | [u7385305] | [Zhaoyu Cao] | [Developer(Function)] |
 | [u7341252] | [Enze Peng] | [Developer(Database)] |
 | [u7370885] | [Yonghao Deng] | [Developer(Function),PM] |
-| [u7354208] | [Zihan Meng] | [Developer(Front-End design)] |
+| [u7354208] | [Zihan Meng] | [Developer(Front-End and UI design)] |
 
 ## Summary of Individual Contributions
 
@@ -456,7 +456,7 @@ If we create buttons for all the items listed in Listview, it will be nasty to h
       1. make the buttons invisible by default .Create linked key in posts which is user_id connected with RBtree users. And use both ids to compare if setup button visible(two ids are same: visible)
 
 
-      <div align="center"> <img src="./images/surprise_5.png" width="700" height="250" align="center"/> </div>
+      <div align="center"> <img src="./images/surprise_5.png" width="700" height="200" align="center"/> </div>
 
 ## Summary of Known Errors and Bugs
 

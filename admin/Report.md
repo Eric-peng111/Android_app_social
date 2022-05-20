@@ -406,28 +406,50 @@ Evaluation:
 
 
 **Surpise Item**
+1. Surpise Item1
+
+   * Problem: 
+         
+      1. Users are extracted from local file once app beginning, it is wasting time if read file every time needs to use all-users in red-black tree. 
+
+      2. Users should be stored in red-black tree, but once constructed RBTree, it is complicated and space-wasted to transfer this instance of RBtree users to all the activities if needed.(use intent to putextra )
+
+      3. To get posts from firebase, we needs to traverse
 
 
 
-**Other**
+   * Solution: so a global dynamic variable is necessarily needed to exist in all the    activities( or such an instance can be called and used in all the activities)
+         
+      1.	The first thing I need to do is rewrite the Application, mainly the onCreate method inside of it, which initializes a Map when it's created so that any values can be inserted. This variable can then be manipulated in various files throughout the application.
 
-*[What other design decisions have you made which you feel are relevant? Feel free to separate these into their own subheadings.]*
+      <div align="center"> <img src="./images/surprise_1.png" width="400" height="150" align="center"/> </div>
+
+      <div align="center"> <img src="./images/surprise_2.png" width="400" height="150" align="center"/> </div>
+
+      2. There are two ways to get the app in the program: getInstance() and getApplication() in the four major components
+
+      3.	So in all activities: to get this global var MyApplicaiton, use getInstance() to get instance which dynamically changed by all the works from different activities.
+
+2. Surpise Item2
+
+   * Problem: In ManageAccountActivity, we needs to create Listview where all the items needs have a button 
+If we create buttons for all the items listed in Listview, it will be nasty to handle because
+         
+      1. It is kind of tough to create buttons dynamically according to the number of items. Because we needs to  get connected between functions and views.
+ 
+
+      2. Even we create buttons for all listed views , buttons needs to be treated differently as to assign different ids to them.
+
+   * Solution: 
+         
+      1.	setOnItemLongClickListener to set up longclick in  Listview  to avoid creating buttons. 
+
+      2. Then create app.AlertDialog to show the confirming windows in order to fulfill funcitons.
+
+      <div align="center"> <img src="./images/surprise_3.png" width="700" height="250" align="center"/> </div>
+
 
 ## Summary of Known Errors and Bugs
-
-*[Where are the known errors and bugs? What consequences might they lead to?]*
-
-*Here is an example:*
-
-1. *Bug 1:*
-
-- *A space bar (' ') in the sign in email will crash the application.*
-- ...
-
-2. *Bug 2:*
-3. ...
-
-*List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
 
 1. *Bug 1:*
 
@@ -466,8 +488,6 @@ Evaluation:
 *Please provide some screenshots of your testing summary, showing the achieved testing coverage. Feel free to provide further details on your tests.*
 
 ## Implemented Features
-
-*[What features have you implemented?]*
 
 **Part 1: Basic App**
 1. *Users must be able to login (not necessarily sign up).*

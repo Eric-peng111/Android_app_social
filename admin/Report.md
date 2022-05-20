@@ -29,6 +29,9 @@ u7385305, Zhaoyu Cao, I contribute 25% of the code. Here are my contributions:
 * ContentActivity.class
 * UserProfileActivity.class
 * Firebase.class
+* Administrator.java
+* Participant.java
+* User.java
 * Report Writing: Conflict Resolution Protocol, Application UML, Summary of Known Errors and Bugs
 
 u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
@@ -36,7 +39,10 @@ u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
 * MyApplication.class: use the RBTree store the user's data
 * database_class: Comment.class,Post.class,ThumbUp.class
 * Parser: E_evaluate.class,P_evaluate,TopicCheck : use the Tokenizer to check
+* userstate folder : NoSessionState,SessionState,UserSession,UserState
+* RBTree.class
 * PostActivity.class
+* RBTreeTest.java
 * Report Writing: Application Design and Decisions
 * Slide preparation: All of the slides
 

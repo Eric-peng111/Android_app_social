@@ -24,17 +24,12 @@
 
 ## Summary of Individual Contributions
 
-*[Summarise the contributions made by each member to the project, e.g. code implementation, code design, UI design, report writing, etc.]*
-
-*[Code Implementation. Which features did you implement? Which classes or methods was each member involved in? Provide an approximate proportion in pecentage of the contribution of each member to the whole code implementation, e.g. 30%.]*
-
-
 u7385305, Zhaoyu Cao, I contribute 25% of the code. Here are my contributions:
 * LoginActivity.class
 * ContentActivity.class
 * UserProfileActivity.class
 * Firebase.class
-* Report Writing: 
+* Report Writing: Conflict Resolution Protocol, Application UML, Summary of Known Errors and Bugs
 * Slide preparation: 
 
 u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
@@ -42,7 +37,7 @@ u7341252, Enze Peng, I contribute 25% of the code. Here are my contributions:
 * MyApplication.class
 * Post.class
 * PostActivity.class
-* Report Writing: 
+* Report Writing: Application Design and Decisions
 * Slide preparation: 
 
 u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:
@@ -51,7 +46,7 @@ u7370885, Yonghao Deng, I contribute 25% of the code. Here are my contributions:
 * RegisterActivity.class: use the Tokenizer to restricted registration conditions
 * iterater.class: use the iterater design patterns
 * container.class
-* Report Writing: 
+* Report Writing: Summary of Individual Contributions,Team Meetings,Summary of Individual Contributions
 * Slide preparation: 
 
 u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:
@@ -66,7 +61,7 @@ u7354208, Zihan Meng, I contribute 25% of the code. Here are my contributions:
 * activity_user_profile.xml
 * list_item_layout.xml
 * MainActivity.class
-* Report Writing: 
+* Report Writing: Implemented Features, Team Members and Roles
 * Slide preparation: 
 
 *[Code Design. What design patterns, data structures, did the involved member propose?]*

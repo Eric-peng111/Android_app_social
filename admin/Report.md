@@ -217,19 +217,23 @@ Treehole is a social media application for college students that provides a plat
 
 *[What features have you implemented?]*
 
-*Here is an example:*
+*Greater Data Usage, Handling and Sophistication*
+1. *Feature 1: Read data instances from multiple local ﬁles in different formats (JSON, XML or Bespoken). (easy)*
+2. *Feature 2: User proﬁle activity containing a media ﬁle (image, animation (e.g. gif), video). (easy)*
+3. *Feature 3: Use GPS information (see the demo presented by our tutors. For example, your app may use the latitude/longitude to show some information relevant to your app). (easy)*
+4. *Feature 4: Report viewer. Provide users with the ability to see a report of interactions with your app (e.g., total views, total likes, total raised for a campaign, etc, in a graphical manner.(medium)*
+5. *Feature 5: Deletion method of either a Red-Black Tree, AVL tree or B-Tree data structure. The deletion of nodes must serve a purpose within your application. (hard)*
 
-*Privacy*
-1. *Featue 1: Users may ... . (easy)*
-2. *Feature 2: A user must ... . (easy)*
-3. *Feature 3: A user can only ... . (medium)*
+*User Interactivity*
+1. *Feature 1: The ability to micro-interact with items in your app (e.g. like/dislike/support/report a post/message/event) [stored in-memory]. (easy)*
+2. *Feature 2: Scheduled actions. At least two different types of actions must be schedulable. For example, a user can schedule an item (e.g., launch a social cause, like an item, post a comment, etc). (medium)*
 
 *Firebase Integration*
-1. *Feature 1: Use Firebase to implement ... . (easy)*
-2. *Feature 2: Use Firebase to persist ... .(medium)*
-
-*List all features you have completed in their separate categories with their difficulty classification. If they are features that are suggested and approved, please state this somewhere as well.*
-
+1. *Feature 1: 1. Use Firebase to implement user Authentication/Authorisation. (easy)*
+2. *Feature 2: Use Firebase to persist all data used in your app (this item replaces the requirement to retrieve data from a local ﬁle) (medium)*
+3. *Feature 3: Using Firebase or another remote database to store user information and having the app updated as the remote database is updated without restarting the application. 
+   E.g. User A makes a transfer, user B on a separate instance of the application sees user A’s transfer appear on their app instance without restarting their application. (very hard)*
+   
 ## Team Meetings
 
 - *[Team Meeting 1](./Meeting01.md)*

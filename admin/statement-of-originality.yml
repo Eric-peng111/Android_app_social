@@ -25,11 +25,45 @@ code:
 # add as many "url+licence+comment" entries as necessary
 # (or remove it altogether if you haven't used any external assets)
 assets:
-  # NOTE: "Bliss" is just here as an example, you should remove it
-  - comment: "_Bliss_ by Charles O'Rear"
-    url: https://en.wikipedia.org/wiki/Bliss_(image)
+  - comment: "user_main.png"
+    url: https://www.iconfont.cn/search/index?searchType=icon&q=%E5%8F%91%E5%B8%83&page=2&fills=&tag=&fromCollection=1
+    licence: fair usedat
+  - comment: "comment.png"
+    url: https://www.iconfont.cn/search/index?searchType=icon&q=%E8%AF%84%E8%AE%BA
     licence: fair use
-
+  - comment: "commit.png"
+    url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=%E6%8F%90%E4%BA%A4
+    licence: fair use
+  - comment: "email.png"
+    url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=email&page=1&fromCollection=1&fills=&tag=
+    licence: fair use
+  - comment: "home.png"
+    url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=home&page=1&fromCollection=1&fills=&tag=
+    licence: fair use
+  - comment: "nearby.png"
+    url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=%E9%99%84%E8%BF%91&page=1&fromCollection=1&fills=&tag=
+    licence: fair use
+  - comment: "phone.png"
+    url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=dianhua&page=1&fromCollection=1&fills=&tag=
+    licence: fair use
+  - comment: "search.png"
+    url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=search&page=2&fromCollection=1&fills=&tag=
+    licence: fair use
+  - comment: "submit_commit.png"
+    url: https://www.iconfont.cn/search/index?spm=a313x.7781069.1998910419.76&searchType=icon&q=%E6%8F%90%E4%BA%A4&page=1&fromCollection=1&fills=&tag=
+    licence: fair use
+  - comment: "login.png"
+    url: https://www.iconfont.cn/search/index?searchType=illustration&q=%E7%99%BB%E5%BD%95
+    licence: fair use
+  - comment: "user_main.png"
+    url: https://www.iconfont.cn/search/index?searchType=icon&q=%E7%94%A8%E6%88%B7&page=2
+    licence: fair use
+  - comment: "login_user_icon.png"
+    url: https://www.iconfont.cn/search/index?searchType=icon&q=%E7%94%A8%E6%88%B7&page=2
+    licence: fair use
+  - comment: "login_password_icon.png"
+    url: https://www.iconfont.cn/search/index?searchType=icon&q=%E5%AF%86%E7%A0%81&page=1&fromCollection=1&fills=&tag=
+    licence: fair use
 # for each member, write your name and uid here
 # remove any empty "name+uid" entries
 members:

@@ -237,5 +237,6 @@ Treehole is a social media application for college students that provides a plat
 - *[Team Meeting 1](./Meeting01.md)*
 - *[Team Meeting 2](./Meeting02.md)*
 - *[Team Meeting 3](./Meeting03.md)*
+- *[Team Meeting 4](./Meeting04.md)*
 
-*Either write your meeting minutes here or link to documents that contain them. There must be at least 4 team meetings. Note that you must commit your minute meetings shortly after your meeting has taken place (e.g., within 24h), otherwise your meeting minute will not be accepted.*
+
